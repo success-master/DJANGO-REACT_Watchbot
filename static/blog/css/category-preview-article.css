@@ -1,0 +1,62 @@
+.category-preview-articles .container {
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+
+}
+
+.category-preview-articles.blue {
+    background-color: #2d505f;
+    color: #fff;
+}
+
+.category-preview-articles.dark {
+    background-color: #000a12;
+    color: #fff;
+}
+
+.category-preview-articles.blue .container,
+.category-preview-articles.dark .container {
+    border: none;
+}
+
+.category-preview-articles .container > .row:first-child {
+    border-top: 1px solid #d1d1d1;
+    margin: 10px 5px 0 5px;
+}
+
+.category-preview-articles .container .row h2 {
+    margin-top: 5px;
+}
+
+.category-preview-articles.blue .container > .row:first-child,
+.category-preview-articles.dark .container > .row:first-child {
+    border-top: none;
+    margin: 0 5px;
+}
+
+.category-preview-articles .articles {
+    margin-top: 30px;
+}
+
+.category-preview-articles .articles .preview-article {
+    margin-top: 45px;
+}
+
+.category-preview-articles .btn-collapse {
+    color: #4f5b62;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 300;
+}
+
+.category-preview-articles.blue .btn-collapse,
+.category-preview-articles.dark .btn-collapse {
+    color: #d1d1d1;
+}
+
+.category-preview-articles .btn-collapse.collapsed .not-collapsed {
+    display: none;
+}
+
+.category-preview-articles .btn-collapse:not(.collapsed) .collapsed {
+    display: none;
+}

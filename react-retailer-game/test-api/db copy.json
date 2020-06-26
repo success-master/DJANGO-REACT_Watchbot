@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "is-authenticated": {
+      "is_authenticated": true,
+      "token": "8f4868",
+      "email": "test@test.com",
+      "first_name": "M",
+      "last_name": "B"
+    }
+  ,
+  "searchable-watches": [
+    { "value": "123456", "label": "Rolex 123456", "brand": "Rolex"},
+    { "value": "789012", "label": "Lange 789012", "brand": "Lange"},
+    { "value": "789032", "label": "Rolex 789032", "brand": "Rolex" }
+  ],
+  "watches": [
+    { "ref": "123456", "brand": "Brand1" },
+    { "ref": "789012", "brand": "Brand2" },
+    { "ref": "789032", "brand": "Brand3" }
+  ],
+  "activities": [
+    { "id": "0123", "tipo":"A", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "0456", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" },
+    { "id": "0789", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"90.000 $", "time":"8m" },
+    { "id": "0112", "tipo":"D", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "0345", "tipo":"V", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "0678", "tipo":"A", "ref":"234234", "model":"Lange", "descr":"80.000 $", "time":"8m" },
+    { "id": "0901", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" },
+    { "id": "0911", "tipo":"P", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" }
+  ],
+  "reference-my-activities": [
+    { "id": "my123", "tipo":"A", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "my1456", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" },
+    { "id": "my1789", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"90.000 $", "time":"8m" },
+    { "id": "my1112", "tipo":"D", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "my0345", "tipo":"V", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "my0678", "tipo":"A", "ref":"234234", "model":"Lange", "descr":"80.000 $", "time":"8m" },
+    { "id": "my0901", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" }
+  ],
+  "reference-other-activities": [
+    { "id": "other123", "tipo":"A", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "other1456", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" },
+    { "id": "other1789", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"90.000 $", "time":"8m" },
+    { "id": "other1112", "tipo":"D", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "other0345", "tipo":"V", "ref":"234234", "model":"Lange", "descr":"1 call", "time":"8m" },
+    { "id": "other0678", "tipo":"A", "ref":"234234", "model":"Lange", "descr":"80.000 $", "time":"8m" },
+    { "id": "other0901", "tipo":"C", "ref":"234234", "model":"Lange", "descr":"100.000 $", "time":"8m" }
+  ],
+  "reference-historical-data": [
+    {"month": "17/01", "price": 21000},
+    {"month": "17/02",  "price": 16500},
+    {"month": "17/03",  "price": 14250},
+    {"month": "17/04",  "price": 19000},
+    {"month": "17/05",  "price": 11000},
+    {"month": "17/06",  "price": 13500},
+    {"month": "17/07",  "price": 12250},
+    {"month": "17/08", "price": 21000},
+    {"month": "17/09",  "price": 16500},
+    {"month": "17/10",  "price": 14250}
+  ],
+  "bids": [
+    { "id": "0678", "tipo": "A", "ref":"234234", "model":"Lange", "bidders": [
+      { "bidder": "543234", "country": "Ita/Milano", "offerUsd": 125000 },
+      { "bidder": "543235", "country": "Fr/Paris", "offerUsd": 120000 },
+      { "bidder": "543235", "country": "Fr/Paris", "offerUsd": 120000 }
+      ],"time_remain" : 10000 }
+  ]
+}

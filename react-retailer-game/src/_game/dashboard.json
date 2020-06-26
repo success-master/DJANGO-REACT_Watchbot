@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "model": {
+      "id": 1,
+      "name": "Tank Solo",
+      "slug": "tank-solo",
+      "brand": {
+        "id": 2,
+        "name": "Cartier",
+        "slug": "cartier"
+      }
+    },
+    "reference": "W5200004",
+    "label": "Cartier Tank Solo W5200004",
+    "description": "",
+    "movement": [
+      "Quartz"
+    ],
+    "case_material": "Yellow gold 18 K ",
+    "case_size": "34,8 x 27,4 mm",
+    "dial_color": "White",
+    "bracelet_material": "Cocco",
+    "watchstrap_material": "Leather with EasyClick device",
+    "picture_url": "https://watchbot.acconsulting.digital/media/uploads/CRW5200004.png",
+    "brand": "Cartier",
+    "gender": "unisex",
+    "price": 5100,
+    "followed_by_this_user": false
+  },
+  {
+    "id": 3,
+    "model": {
+      "id": 3,
+      "name": "Ballon Bleu De Cartier",
+      "slug": "ballon-bleu-de-cartier",
+      "brand": {
+        "id": 3,
+        "name": "Cartier",
+        "slug": "cartier"
+      }
+    },
+    "reference": "WSBB0020",
+    "label": "Cartier Ballon Bleu De Cartier WSBB0020",
+    "description": "",
+    "movement": [
+      "Automatic"
+    ],
+    "case_material": "Steel",
+    "case_size": "37 mm",
+    "dial_color": "White",
+    "bracelet_material": "Cocco",
+    "watchstrap_material": "Leather",
+    "picture_url": "https://watchbot.acconsulting.digital/media/uploads/CRWSBB0020.png",
+    "brand": "Cartier",
+    "year": 2017,
+    "gender": "unisex",
+    "price": 7100,
+    "followed_by_this_user": true
+  }
+]

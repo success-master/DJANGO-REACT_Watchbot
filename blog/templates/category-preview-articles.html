@@ -1,0 +1,64 @@
+<section class="category-preview-articles {{ category.type }}">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-9 p-0">
+                <h2>{{ category.category.name }}</h2>
+            </div>
+            {% if category.articles.count > 0 %}
+                <div class="col-3 p-0 text-right">
+                    <button
+                            class="btn btn-link btn-collapse p-0 text-uppercase"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapse{{ category.category.slug }}"
+                            aria-expanded="true"
+                    >
+                        <span class="collapsed">Show</span>
+                        <span class="not-collapsed">Hide</span>
+                    </button>
+                </div>
+            {% endif %}
+        </div>
+        <div class="articles">
+            <div class="collapse show" id="collapse{{ category.category.slug }}">
+                <div class="row" id="more-{{ category.category.slug }}">
+                    {% for article in category.articles %}
+                        <div class="col-lg-4 article mb-3 {% if forloop.counter > 3 %} d-none {% endif %}">
+                            {% include 'preview-article.html' with article=article typeArticle=category.typeArticle %}
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if category.articles.count > 3 %}
+                    <div class="text-center">
+                        <a href="#"
+                           class="more text-uppercase{% if category.type == 'dark' or category.type == 'blue' %} secondary {% endif %}"
+                           data-target="more-{{ category.category.slug }}"
+                        >
+                            + Load more news
+                        </a>
+                        <a href="#"
+                           class="less d-none text-uppercase{% if category.type == 'dark' or category.type == 'blue' %} secondary {% endif %}"
+                           data-target="more-{{ category.category.slug }}"
+                        >
+                            - Show less
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% if is_authenticated == False and category.bannerRegister != None %}
+    <div class="banner-registration {{ category.bannerRegister.type }}">
+        <p class="subtitle text-uppercase">{{ category.bannerRegister.subtitle }}</p>
+        <h1 class="title">{{ category.bannerRegister.title }}</h1>
+        <a href="/login" class="btn btn-primary btn-register">
+            Register Now
+        </a>
+    </div>
+{% endif %}
+{% if category.advertising != None %}
+    <div class="banner">
+        <div class="link"></div>
+    </div>
+{% endif %}

@@ -1,0 +1,197 @@
+.reference-chart__container{
+    width: 100%;
+    background-color: $content__background-color__lighter;
+    border-top: 1px solid #4c6875;
+    margin-top: 5px;
+    padding: 10px;
+    @include flex-block(
+        $_justify-content: center
+    );
+
+    @media only screen and (max-width: 900px){
+        flex-direction: column;
+    }
+
+    svg{
+        max-width: $reference__chart__max-width;
+        max-height: 165px;
+    }
+}
+
+.reference-chart__timeline{
+    width: 100%;
+
+    @media only screen and (min-width: 901px){
+        width: 85px;
+        padding-right: 10px;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @media only screen and (max-width: 900px){
+            max-width: $reference__chart__max-width;
+            margin: 0 auto 25px;
+            padding-left: 45px;
+            padding-right: 10px;
+            @include flex-block();
+        }
+
+        @media only screen and (max-width: 375px){
+            padding-left: 35px;
+            padding-right: 20px;
+        }
+
+        li{
+            padding: 7px 0;
+            @media only screen and (max-width: 900px){
+                flex: 0 0 25%;
+            }
+        }
+
+        button{
+            width: 30px;
+            padding: 2px 0;
+            border: 0 none;
+            border-bottom: 2px solid #3e5d6a;
+            background: transparent;
+            font-family: $font-family__secondary;
+            font-size: 11px;
+            color: #fff;
+            letter-spacing: 0.06em;
+            text-align: left;
+            outline: 0 none;
+            cursor: pointer;
+
+            &.active{
+                border-bottom: 2px solid $orange-color;
+            }
+
+            @media only screen and (max-width: 900px){
+                width: 100%;
+            }
+        }
+    }
+}
+
+.reference-chart__wrapper{
+    width: 100%;
+    max-width: $reference__chart__max-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media only screen and (min-width: 901px){
+        /*width: calc(100% - 85px - 110px);
+        max-width: calc(100% - 85px - 110px);*/
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .watchlist__chart__label{
+        font-size: 10px;
+    }
+
+    svg{
+        tspan{
+            font-family: $font-family__base !important;
+
+            @media only screen and (max-width: 480px){
+                font-size: 130% !important;
+            }
+
+            @media only screen and (max-width: 375px){
+                font-size: 150% !important;
+            }
+
+            @media only screen and (max-width: 320px){
+                font-size: 165% !important;
+            }
+        }
+    }
+}
+
+.reference-chart__prices-wrapper{
+    width: 100%;
+
+    @media only screen and (min-width: 901px){
+        width: 130px;
+        padding-left: 10px;
+        padding-top: 23px;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @media only screen and (max-width: 900px){
+            max-width: 100%;
+            margin: 15px auto 0;
+            padding-left: 0;
+            padding-right: 0;
+            @include flex-block($_justify-content: center);
+        }
+
+        li{
+            font-family: $font-family__secondary;
+            font-size: 13px;
+            color: #fff;
+            padding: 7px 0;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+            @media only screen and (max-width: 900px){
+                flex: 0 0 33%;
+                text-align: center;
+                padding: 10px 10px 0;
+            }
+
+            span{
+                display: block;
+                font-family: $font-family__base;
+                font-size: 10px;
+                color: #809fab;
+                letter-spacing: 0.04em;
+            }
+        }
+    }
+}
+
+
+.bid-chart-container{
+    .reference-chart__container{
+        flex-direction: column;
+        background-color: transparent;
+        border-top: 0 none;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .reference-chart__timeline{
+        width: 100%;
+
+        ul{
+            max-width: $bid__chart__max-width;
+            margin: 0 auto 25px;
+            padding-left: 45px;
+            padding-right: 10px;
+            @include flex-block();
+        }
+    }
+
+    .reference-chart__wrapper{
+        width: 100%;
+        max-width: $bid__chart__max-width;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media only screen and (min-width: 992px){
+            width: 115%;
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+    }
+
+    .reference-chart__prices-wrapper{
+        width: 100%;
+    }
+}

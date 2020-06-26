@@ -1,0 +1,291 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>WatchBOT</title>
+        <link href="{% static "blog/bootstrap410/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="{% static "blog/fontawesome/css/font-awesome.min.css" %}" rel="stylesheet">
+        <link href="{% static "blog/flatpickr/flatpickr.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/style.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/custom_bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/category-preview-article.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/preview-article.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/article.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/about.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/retailers.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/home.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/login.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/registration.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/contact-us.css" %}" rel="stylesheet">
+
+        <link rel="manifest" href="{% static "manifest.json" %}">
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,400,500,600" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-dark">
+        <div class="container">
+            <div class="row w-100 py-3 align-items-center">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a class="navbar-brand" href="{% url "home" %}">
+                        <img class="normal" src="{% static "blog/images/log_white.png" %}" height="50" alt="">
+                        <img class="responsive" src="{% static "blog/images/logo_minimal.png" %}" height="26" alt="">
+                    </a>
+                </div>
+                <div class="offset-lg-6 col-lg-3 offset-md-4 col-md-4 col-6 text-right">
+                    <div class="navbar-nav ml-auto">
+                        <div id="row-options" class="row">
+                            <div class="col-6 align-self-center">
+                                <div class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <img class="vertical-align-sub mr-2 globe" src="{% static "blog/icons/globe.svg" %}" alt="" />
+                                      ENG
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                    <a class="dropdown-item" href="#">ENG</a>
+                                    <a class="dropdown-item" href="#">ITA</a>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-6 align-self-center">
+                                <div class="nav-item">
+                                    {% if is_authenticated == True %}
+                                        <a href="{% url "logout" %}" class="btn btn-link text-white">
+                                            <i class="material-icons mr-2 user" style="vertical-align: sub;">logout</i>
+                                            <span class="text">LOGOUT</span>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url "login" %}" class="btn btn-link text-white">
+                                            <img class="vertical-align-bottom mr-2 user" src="{% static "blog/icons/user.svg" %}" alt="">
+                                            <span class="text">LOG IN</span>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                                <div class="col-6 align-self-center">
+                                     {% if is_authenticated == True %}
+                                            {% if full_access == True %}
+                                            <div class="nav-item">
+                                                    <a href="{{ trading_url }}" class="btn btn-link text-white">
+                                                        <img class="vertical-align-bottom mr-2 user" src="{% static "blog/icons/profile-update.svg" %}" alt="">
+                                                        <span class="text">UPGRADE</span>
+                                                    </a>
+
+                                            </div>
+                                            {% endif %}
+                                    {% endif %}
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark second-nav">
+        <div class="container px-lg-0 px-xl-0">
+            <div class="navbar-nav w-100">
+                <div class="arrows">
+                        <div class="left">
+                            <img src="{% static 'blog/icons/arrow-navigation-left.svg' %}" alt="" />
+                        </div>
+                        <div class="right">
+                            <img src="{% static 'blog/icons/arrow-navigation-right.svg' %}" alt="" />
+                        </div>
+                    </div>
+                <div class="columns" id="arrows">
+                    <div class="column">
+                        <a class="nav-link" href="/about">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "About us" %}</span>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="nav-link" href="{{ trading_url }}">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "Trading Platform" %}</span>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="nav-link" href="/customer-game/">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "Demo Platform" %}</span>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="nav-link" href="/retailers">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "Certified Retailers" %}</span>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="nav-link" href="#">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "Reports" %}</span>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a class="nav-link" href="/contact-us">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "Contact us" %}</span>
+                        </a>
+                    </div>
+                    {% if is_authenticated == True %}
+                    <div class="column">
+                        <a class="nav-link" href="/profile">
+                            <img src="{% static 'blog/icons/arrow-menu.svg' %}" alt="" />
+                            <span>{% trans "Profile" %}</span>
+                        </a>
+                    </div>
+                    {% endif %}
+                    <div class="column">
+                        <a class="nav-link justify-content-center" href="/search">
+                            <i class="fa fa-search mr-2" aria-hidden="true"></i>{% trans "Search the news" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="main_container">
+{% block content %}
+{% endblock content %}
+</section>
+<footer class="content">
+    <div class="container">
+        <a class="d-block text-center" href="{% url "home" %}">
+            <img src="{% static "blog/images/log_white.png" %}" height="50" alt="">
+        </a>
+        <div class="row text-center link mt-5">
+            <div class="col-lg-4 col-sm-6">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-uppercase" href="#">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-uppercase" href="#">Terms & Conditions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-uppercase" href="#">Faq</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-uppercase" href="/about">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-uppercase" href="#">Contacs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-uppercase" href="#">Press Kit</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 align-self-center description">
+                <p>
+                    Are you a retailer interested in Watchbot?
+                </p>
+                <p>
+                    Get in contact with us
+                </p>
+            </div>
+        </div>
+        <form method="post" class="mt-4">
+            {%csrf_token %}
+          <div class="row">
+            <div class="col-lg-8 offset-lg-1 col-sm-8">
+              <input type="email" name="email" class="form-control" placeholder="Subscribe to our Newsletter">
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <button type="submit" class="btn btn-primary btn-register btn-block">
+                  Subscribe Now
+              </button>
+            </div>
+          </div>
+        </form>
+    </div>
+</footer>
+<script src="{% static "blog/js/jquery.min.js" %}"></script>
+<script src="{% static "blog/js/jquery-validation-1.19.0/jquery.validate.min.js" %}"></script>
+<script src="{% static "blog/js/jquery-validation-1.19.0/additional-methods.min.js" %}"></script>
+<script src="{% static "blog/bootstrap410/js/bootstrap.bundle.min.js" %}"></script>
+<script src="{% static "blog/flatpickr/flatpickr.js" %}"></script>
+<script src="{% static "blog/js/payform/payform.min.js" %}"></script>
+<script src="{% static "blog/js/payform/jquery.payform.min.js" %}"></script>
+<script src="{% static "blog/js/blog.js" %}"></script>
+{% block extra_body_script %}
+{% endblock extra_body_script %}
+
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-messaging.js"></script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6846607.js"></script>
+<!-- End of HubSpot Embed Code -->
+<script>
+  function messageReceived(message){
+      console.log(message);
+  }
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD_LuTv-rh6GlQ-sjraC9paG4QkacaaB0I",
+    authDomain: "watchbot-afbb0.firebaseapp.com",
+    databaseURL: "https://watchbot-afbb0.firebaseio.com",
+    projectId: "watchbot-afbb0",
+    storageBucket: "watchbot-afbb0.appspot.com",
+    messagingSenderId: "108225665252"
+  };
+  firebase.initializeApp(config);
+
+  const messaging = firebase.messaging();
+  messaging.usePublicVapidKey("BPXfMrKqkQyz5s8cxmMsklUPxzF9oDcWqD1DKJRbKdgef3WFd5aSiOG84HxefCNu6V6RFRUQSd4wWwHxpZE_VD4");
+
+
+  function getToken(messaging) {
+      messaging.getToken().then(function(currentToken) {
+          console.log(currentToken);
+      if (currentToken) {
+        //sendTokenToServer(currentToken);
+        //updateUIForPushEnabled(currentToken);
+      } else {
+        // Show permission request.
+        console.log('No Instance ID token available. Request permission to generate one.');
+        // Show permission UI.
+        //updateUIForPushPermissionRequired();
+        //setTokenSentToServer(false);
+      }
+    }).catch(function(err) {
+      console.log('An error occurred while retrieving token. ', err);
+      //showToken('Error retrieving Instance ID token. ', err);
+      //setTokenSentToServer(false);
+    });
+  }
+
+  messaging.requestPermission().then(function() {
+      console.log('Notification permission granted.');
+      // TODO(developer): Retrieve an Instance ID token for use with FCM.
+      // ...
+      getToken(messaging);
+  }).catch(function(err) {
+      console.log('Unable to get permission to notify.', err);
+  });
+
+  messaging.onMessage(function(payload) {
+      messageReceived(payload);
+      // ...
+    });
+
+</script>
+</body>
+</html>

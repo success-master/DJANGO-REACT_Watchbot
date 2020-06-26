@@ -1,0 +1,33 @@
+.home-page .news .container {
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+
+}
+.home-page .news .lines {
+    width: 100%;
+    padding-bottom: 3px;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.home-page .news .dates {
+    font-size: 11px;
+    color: #4f5b62;
+    margin-top: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+}
+
+.home-page .news .dates .today {
+    border-bottom: 1px solid #d1d1d1;
+    width: 80%;
+    padding-bottom: 3px;
+}
+
+.home-page .news .dates .time-zone {
+    padding-top: 3px;
+}
+
+.home-page .news .articles {
+    margin-top: 60px;
+}

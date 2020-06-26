@@ -1,0 +1,283 @@
+{% load static %}
+<div class="about-page">
+    <section class="first-row {{ home|yesno:"home,about" }}">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-8 offset-lg-2 align-self-center">
+                    <h1 class="text-white text-center">
+                        Trade Luxury Watches directly with Brands & Official Retailers
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if is_authenticated == False or is_authenticated == None %}
+        <div class="banner-registration small">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 align-self-center">
+                        <h5 class="text-white">Register now for a preview of our real-time trading platform</h5>
+                    </div>
+                    <div class="col-lg-4 mt-2 mt-lg-0 mt-xl-0">
+                        <a href="/login" class="btn btn-primary btn-register">
+                            Register Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <section class="second-row">
+        <div class="container h-100 text-center">
+            <h1 class="title">
+                The World Of Watchbot:
+            </h1>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <img src="{% static 'blog/images/about/shake.svg' %}" class="mb-2" />
+                    <p class="description mt-3">
+                        Trade directly with Brands and Official Retailers
+                    </p>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <img src="{% static 'blog/images/about/watch.svg' %}" class="mb-2" />
+                    <p class="description mt-3">
+                        Only New Pieces
+                    </p>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <img src="{% static 'blog/images/about/certif.svg' %}" class="mb-2" />
+                    <p class="description mt-3">
+                        Original warranty for each watch
+                    </p>
+                </div>
+                <div class="col-lg-4 offset-lg-2 col-sm-6">
+                    <img src="{% static 'blog/images/about/credit_bit.svg' %}" class="mb-2 mt-sm-4" />
+                    <p class="description mt-3">
+                        Secure and Innovative Trading and Paying Environment
+                    </p>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <img src="{% static 'blog/images/about/route.svg' %}" class="mb-2" />
+                    <p class="description mt-3">
+                        Market Insights and Analytics
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="third-row">
+        <div class="container text-center">
+            <h1 class="title text-white mb-4">
+                How well do you know <br> the Luxury Watch Market?
+            </h1>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="{% static 'blog/images/about/king2.svg' %}" class="mb-2" />
+                    <p class="title mt-3 text-uppercase text-white">Beginner</p>
+                    <i class="long-arrow-down text-white">↓</i>
+                    <p class="description">I’m a beginner who wants to know more</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'blog/images/about/king.svg' %}" class="mb-2" />
+                    <p class="title mt-3 text-uppercase text-white">watch affectionate</p>
+                    <i class="long-arrow-down text-white">↓</i>
+                    <p class="description">I’m a watch affectionate in my spare time</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'blog/images/about/king3.svg' %}" class="mb-2" />
+                    <p class="title mt-3 text-uppercase text-white">pro collector</p>
+                    <i class="long-arrow-down text-white">↓</i>
+                    <p class="description">I’m a pro collector, Haute Horlogerie is my world</p>
+                </div>
+            </div>
+            <p>
+                <a href="/" class="more secondary text-uppercase">
+                    Learn more about Watchbot’s world
+                </a>
+            </p>
+        </div>
+    </section>
+    {% if home == None %}
+        <section class="fourth-row">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 justify-content-center offset-lg-1 d-none d-lg-flex d-xl-flex">
+                        <img src="{% static 'blog/images/about/world_check.svg' %}" />
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="title">No Surprises</h1>
+                        <i class="long-arrow-down d-none d-lg-block d-xl-block">↓</i>
+                        <div class="row d-lg-none d-xl-none align-items-center">
+                            <div class="col-4">
+                                <img src="{% static 'blog/images/about/world_check.svg' %}" />
+                            </div>
+                            <div class="col-4">
+                                <i class="long-arrow-down">↓</i>
+                            </div>
+                            <div class="col-4">
+                                <img src="{% static 'blog/images/about/verify_watch.svg' %}" />
+                            </div>
+                        </div>
+                        <p class="description">
+                            In Watchbot you will find your dream watch
+                            and negotiate its price
+                            <strong>
+                                directly with our affiliated brands
+                                and authorized official retailers.
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 justify-content-center d-none d-lg-flex d-xl-flex">
+                        <img src="{% static 'blog/images/about/verify_watch.svg' %}" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fifth-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 offset-lg-1">
+                        <h1 class="title text-white">
+                            Certified New & Original
+                        </h1>
+                        <img src="{% static 'blog/images/about/certif.svg' %}" class="d-block mx-auto" />
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <div class="data mt-2">
+                            <span class="check">
+                                <img src="{% static 'blog/icons/check.svg' %}" alt="" />
+                            </span>
+                            <p class="description">
+                                You will be buying <strong>a brand new watch</strong> shipped directly from the boutique to your hands.
+                            </p>
+                        </div>
+                        <div class="data">
+                            <span class="check">
+                                <img src="{% static 'blog/icons/check.svg' %}" alt="" />
+                            </span>
+                            <p class="description">
+                                Your watch will be accompanied by its
+                                <strong>
+                                    original and valid warranty,
+                                    issued by the manufacturers and retailers
+                                </strong>
+                                in case you ever have to require
+                                any assistance for your watch.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sixth-row">
+            <div class="container">
+                <div class="section pt-0 pb-0 text-center">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 offset-lg-1 d-none d-lg-flex d-xl-flex">
+                            <img src="{% static 'blog/images/about/bull.svg' %}" alt="" />
+                        </div>
+                        <div class="col-lg-6">
+                            <h1 class="title">Trade like <br>on the Stock Market</h1>
+                            <i class="long-arrow-down d-none d-lg-block d-xl-block">↓</i>
+                            <div class="row d-lg-none d-xl-none align-items-center">
+                                <div class="col-4">
+                                    <img src="{% static 'blog/images/about/bull.svg' %}" alt="" />
+                                </div>
+                                <div class="col-4">
+                                    <i class="long-arrow-down">↓</i>
+                                </div>
+                                <div class="col-4">
+                                    <img src="{% static 'blog/images/about/trade.svg' %}" alt="" />
+                                </div>
+                            </div>
+                            <p class="description">
+                                Bid for your dream watch<br>
+                                    as if you were on the stock market<br>
+                                    <strong>with real time updates</strong><br>
+                                    on the upcoming and ongoing trades.
+                            </p>
+                        </div>
+                        <div class="col-lg-2 d-none d-lg-flex d-xl-flex">
+                            <img src="{% static 'blog/images/about/trade.svg' %}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if is_authenticated == False or is_authenticated == None %}
+            <div class="banner-registration secondary">
+                <p class="subtitle text-uppercase">Subscribe to our Newsletter</p>
+                <h1 class="title">Enter the world of Watchbot</h1>
+                <a href="/login" class="btn btn-primary btn-register">
+                    Register Now
+                </a>
+            </div>
+        {% endif %}
+        <section class="sixth-row">
+            <div class="container pt-0">
+                <div class="section text-center">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <h1 class="title">Pay in an Innovative <br>& Secure Manner</h1>
+                            <i class="long-arrow-down">↓</i>
+                            <p class="description">
+                                We innovate allowing you to pay in different methods:
+                            </p>
+                            <div class="row mt-5">
+                                <div class="col-lg-4">
+                                    <img src="{% static 'blog/images/about/credit_card.svg' %}" class="mb-4 mt-lg-2" />
+                                    <p>Credit Cards</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <img src="{% static 'blog/images/about/world.svg' %}" class="mb-4" />
+                                    <p>Wire Transfer</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <img src="{% static 'blog/images/about/crypto.svg' %}" class="mb-4 mt-lg-2" />
+                                    <p>Cryptocurrencies</p>
+                                </div>
+                            </div>
+                            <p class="font-weight-bold mt-4">Always in a completely secure environment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section last text-center">
+                    <h1 class="title mb-5">
+                        Become a Pro<br>
+                        with our Market Analytics<br>
+                        and Tools
+                    </h1>
+                    <div class="row">
+                        <i class="long-arrow-down">↓</i>
+                        <div class="col-lg-6">
+                            <img src="{% static 'blog/images/about/route.svg' %}" alt="" />
+                            <p class="mt-5">
+                                Follow market indices of your selected models,
+                                <strong>get analytical reports of trades</strong> and receive
+                                most recent and breaking news on the luxury watch market.
+                            </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="{% static 'blog/images/about/stats.svg' %}" alt="" />
+                            <p class="mt-5">
+                                 With our tools you will never miss an
+                                opportunity to trade and you have
+                                <strong>all the information you need to bid.</strong> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if is_authenticated == False or is_authenticated == None %}
+            <div class="banner-registration">
+                <p class="subtitle text-uppercase">Register now for an exclusive preview</p>
+                <h1 class="title">Preview our real-time trading platform</h1>
+                <a href="/login" class="btn btn-primary btn-register">
+                    Register Now
+                </a>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>

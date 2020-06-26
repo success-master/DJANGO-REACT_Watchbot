@@ -1,0 +1,136 @@
+.manage-credit-card__container{
+    margin-top: 20px;
+
+    &.open{
+        padding-bottom: 13px;
+        border-bottom: 1px solid #4c6974;
+    }
+
+    select,
+    input[type=number],
+    input[type=text]{
+        border: 0 none  !important;
+        border-radius: 0 !important;
+        height: 32px !important;
+        color: #2d505f !important;
+        text-transform: uppercase;
+        box-shadow: none  !important;
+        outline: none;
+    }
+
+    select{
+        outline: 1px solid #fff;
+        outline-offset: -1px;
+        -webkit-border-radius: 0px;
+    }
+
+    select,
+    input[type=number],
+    input[type=text],
+    label{
+        font-size: 12px !important;
+        font-family: $font-family__base !important;
+        font-weight: 400 !important;
+    }
+
+    .manage-credit-card__ddl{
+        margin-top: 2px;
+        margin-bottom: 7px;
+    }   
+
+    .manage-credit-card__add-new{
+        .add-credit-card__row{
+            @include flex-block(
+                $_align-items: center
+            );
+
+            .add-credit-card__cell{
+                margin: 7px 0;
+
+                &.cell__cc-number{
+                    flex: 0 0 70%;
+                }
+
+                &.cell__cvv2{
+                    flex: 0 0 30%;
+                }
+
+                &.cell__yy,
+                &.cell__mm{
+                    flex: 0 0 50%;
+                }
+            }
+
+            .add-credit-card__cell + .add-credit-card__cell{
+                padding-left: 5px;
+            }
+        }
+    } 
+    
+}
+
+
+//-------------------------
+// Button
+// ------------------------
+.ui.modal{
+    .change-credit-card{
+        width: 100%;
+        border-bottom: 1px solid #4c6974;
+        background: transparent;
+        padding: 0 0 5px 26px;
+        color: $orange-color;
+        font-size: 13px;
+        font-weight: 600;
+        //line-height: 20px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-align: left;
+
+        .change-credit-card__triangle {
+            position: absolute;
+            left: 8px;
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid $orange-color;
+            border-bottom: 2px solid $orange-color;
+            transform: rotate(-45deg);
+            top: 2px;
+        }
+
+        &.open{
+            .change-credit-card__triangle {
+                top: 0px;
+                transform: rotate(45deg);
+            }    
+        }
+    }
+}
+
+//-------------------------
+// OVVERRIDE STYLE
+// ------------------------
+.ui.modal.modal-container.matched-trade__modal-container{
+    .manage-credit-card__container{
+        margin-top: 15px;
+        margin-bottom: 13px;
+        padding-bottom: 0;
+        border-bottom: 0 none;
+
+        .actions{
+            max-width: none;
+            margin-left: 0;
+
+            button{
+                margin: 0; 
+                padding-left: 18px;
+                min-width: 150px;
+                border-bottom: 0 none;
+
+                .change-credit-card__triangle {
+                    left: 0px;
+                }
+            }
+        }
+    }
+}

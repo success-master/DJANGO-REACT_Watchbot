@@ -1,0 +1,16 @@
+Formato File CSV Per Import Delle Reference Orologi
+
+(va bene excel che deve essere poi trasformato in CSV) 
+
+1  - nome file imagine (default codice reference orologio con prefisso codice marca) .estenzione (jpg/png/svg...ecc): es (CRW5200004.jpg)
+2  - Brand (es. Cartier)
+3  - Model (es. Tank Solo)
+4  - Reference, codice reference orologio (es. W5200004)
+5  - Movement (es. Quartz/Automatic/Manual)
+6  - Case Material (es. Steel/Titanium/Gold)
+7  - Case Size (es. 27 x 37 mm)
+8  - Dial Color (es. Black/White/Blue)
+9  - Bracelet Material (es. Transparent/Alligator)
+10 - Gender (es. man/woman/unisex)
+11 - Price (es. 6750)
+12 - Reference Extension, estensione al codice reference orologio (Stringa Opzioanle Max 25 Char)

@@ -1,0 +1,16 @@
+<article class="preview-article {{ typeArticle }}">
+    <a href="/{{ article.get_url }}">
+        <img src="{{ article.img.url }}" alt="" />
+        <div class="details">
+            <div class="title">
+                {% if article.category != None and showCategory == True %}
+                    <span class="category">{{ article.category.name }}</span> /
+                {% endif %}
+                <span class="title-article">{{ article.title }}</span>
+            </div>
+            <div class="date">
+                <span>{{ article.date|date:"d F Y" }}</span>
+            </div>
+        </div>
+    </a>
+</article>

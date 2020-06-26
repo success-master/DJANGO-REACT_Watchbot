@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="registration-page">
+        <div class="container">
+            <h1 class="title">Registration: Step 1</h1>
+            <form method="post" class="registration-form" autocomplete="off">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ signup_form.email.id_for_label }}">Email</label>
+                    {{ signup_form.email }}
+                    {{ signup_form.email.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ signup_form.password1.id_for_label }}">Password</label>
+                    {{ signup_form.password1 }}
+                    {{ signup_form.password1.errors }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ signup_form.password2.id_for_label }}">Confirm Password</label>
+                    {{ signup_form.password2 }}
+                    {{ signup_form.password2.errors }}
+                </div>
+                <div class="checkbox">
+                    <div class="form-group">
+                        {{ signup_form.check1 }}
+                        <label for="{{ signup_form.check1.id_for_label }}">
+                            I would like to regularly receive a with offers, products, and other news from Watchbot via email. I can revoke this agreement with Watchbot at any time.
+                        </label>
+                        {{ signup_form.check1.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ signup_form.check2 }}
+                        <label for="{{ signup_form.check2.id_for_label }}">
+                            I accept Watchbot general terms and conditions and privacy policy
+                        </label>
+                        {{ signup_form.check2.errors }}
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" name="type" value="{{ type }}" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

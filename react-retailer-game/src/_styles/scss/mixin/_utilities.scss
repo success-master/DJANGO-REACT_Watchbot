@@ -1,0 +1,272 @@
+//
+//  Flex layout
+//  ---------------------------------------------
+@mixin flex-block(
+    $_direction         : row,
+    $_wrap              : nowrap,
+    $_justify-content   : flex-start,
+    $_align-items       : stretch,
+    $_align-content     : stretch,
+    $_mobile-direction  : false
+) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    //row | row-reverse | column | column-reverse
+    -webkit-flex-direction: $_direction;
+    -moz-flex-direction: $_direction;
+    -ms-flex-direction: $_direction;
+    flex-direction: $_direction;
+
+    // nowrap | wrap | wrap-reverse
+    -webkit-flex-wrap: $_wrap;
+    -moz-flex-wrap: $_wrap;
+    -ms-flex-wrap: $_wrap;
+    flex-wrap: $_wrap;
+
+    //flex-start | flex-end | center | space-between | space-around | space-evenly;
+    -webkit-justify-content: $_justify-content;
+    -moz-justify-content: $_justify-content;
+    -ms-justify-content: $_justify-content;
+    justify-content: $_justify-content;
+    -ms-flex-pack: $_justify-content;
+
+    //flex-start | flex-end | center | baseline | stretch;
+    -webkit-align-items: $_align-items;
+    -moz-align-items: $_align-items;
+    -ms-align-items: $_align-items;
+    align-items: $_align-items;
+
+    //flex-start | flex-end | center | space-between | space-around | stretch;
+    -webkit-align-content: $_align-content;
+    -moz-align-content: $_align-content;
+    -ms-align-content: $_align-content;
+    align-content: $_align-content;
+
+    @if $_mobile-direction {
+        @include max-screen($screen__m) {
+            -webkit-flex-direction: $_mobile-direction;
+            -moz-flex-direction: $_mobile-direction;
+            -ms-flex-direction: $_mobile-direction;
+            flex-direction: $_mobile-direction;
+        }
+    }
+}
+
+
+@mixin flex-item(
+    $_basis             : false,
+    $_grow              : false,
+    $_order             : false,
+    $_shrink            : false
+){
+    @if $_basis {
+        -webkit-flex-basis: $_basis;
+        -moz-flex-basis: $_basis;
+        -ms-flex-basis: $_basis;
+        flex-basis: $_basis;
+    }
+
+    @if $_grow {
+        -webkit-flex-grow: $_grow;
+        -moz-flex-grow: $_grow;
+        -ms-flex-grow: $_grow;
+        flex-grow: $_grow;
+    }
+
+    @if $_shrink {
+        -webkit-flex-shrink: $_shrink;
+        -moz-flex-shrink: $_shrink;
+        -ms-flex-shrink: $_shrink;
+        flex-shrink: $_shrink;
+    }
+
+    @if $_order {
+        -webkit-box-ordinal-group: $_order;
+        -moz-box-ordinal-group: $_order;
+        -ms-flex-order: $_order;
+        -webkit-order: $_order;
+        order: $_order;
+    }
+}
+
+
+
+@mixin button-panel(
+    $_button-panel__font-family              : $button-panel__font-family,
+    $_button-panel__font-size                : $button-panel__font-size,
+    $_button-panel__font-weight              : $button-panel__font-weight,
+    $_button-panel__text-align               : $button-panel__text-align,
+    $_button-panel__padding                  : $button-panel__padding,
+    $_button-panel__line-height              : $button-panel__line-height,
+    $_button-panel__height                   : $button-panel__height,
+    $_button-panel__letter-spacing           : $button-panel__letter-spacing,
+    $_button-panel__color                    : $button-panel__color,
+    $_button-panel__hover__color             : $button-panel__hover__color,
+    $_button-panel__background-color         : $button-panel__background-color,
+    $_button-panel__hover__background-color  : $button-panel__hover__background-color,
+    $_button-panel__border                   : $button-panel__border,
+    $_button-panel__hover__border            : $button-panel__hover__border,
+    $_button-panel__border-radius            : $button-panel__border-radius,
+    $_button-panel__transition               : $button-panel__transition,
+    $_button-panel__box-shadow               : $button-panel__box-shadow
+) {
+
+    display: inline-block;
+    width: auto;
+    text-transform: uppercase;
+    position: relative;
+    min-height: auto;
+    color: $_button-panel__color;
+    font-size: $_button-panel__font-size;
+    font-family: $_button-panel__font-family;
+    font-weight: $_button-panel__font-weight;
+    text-align: $_button-panel__text-align;
+    letter-spacing: $_button-panel__letter-spacing;
+    /*padding: 4px 0 !important;*/
+    padding: $_button-panel__padding;
+    line-height: $_button-panel__line-height;
+    height: $_button-panel__height;
+    background: $_button-panel__background-color;
+    border: $_button-panel__border;
+    border-radius: $_button-panel__border-radius;
+    transition: $_button-panel__transition;
+    box-shadow: $_button-panel__box-shadow;
+
+    &:hover{
+        color: $_button-panel__hover__color;
+        border: $_button-panel__hover__border;
+        background: $_button-panel__hover__background-color;
+        box-shadow: $_button-panel__box-shadow;
+    }
+}
+
+
+
+@mixin button-draw(
+    $_button-draw__font-family              : $button-draw__font-family,
+    $_button-draw__font-size                : $button-draw__font-size,
+    $_button-draw__font-weight              : $button-draw__font-weight,
+    $_button-draw__text-align               : $button-draw__text-align,
+    $_button-draw__padding                  : $button-draw__padding,
+    $_button-draw__line-height              : $button-draw__line-height,
+    $_button-draw__height                   : $button-draw__height,
+    $_button-draw__letter-spacing           : $button-draw__letter-spacing,
+    $_button-draw__color                    : $button-draw__color,
+    $_button-draw__hover__color             : $button-draw__hover__color,
+    $_button-draw__background-color         : $button-draw__background-color,
+    $_button-draw__hover__background-color  : $button-draw__hover__background-color,
+    $_button-draw__border                   : $button-draw__border,
+    $_button-draw__hover__border            : $button-draw__hover__border,
+    $_button-draw__border-radius            : $button-draw__border-radius,
+    $_button-draw__transition               : $button-draw__transition,
+    $_button-draw__box-shadow               : $button-draw__box-shadow
+) {
+
+    display: inline-block;
+    width: auto;
+    text-transform: uppercase;
+    position: relative;
+    min-height: auto;
+    max-height: 30px;
+    color: $_button-draw__color;
+    font-size: $_button-draw__font-size;
+    font-family: $_button-draw__font-family;
+    font-weight: $_button-draw__font-weight;
+    text-align: $_button-draw__text-align;
+    letter-spacing: $_button-draw__letter-spacing;
+    /*padding: 4px 0 !important;*/
+    padding: $_button-draw__padding;
+    line-height: $_button-draw__line-height;
+    height: $_button-draw__height;
+    background: $_button-draw__background-color;
+    border: $_button-draw__border;
+    border-radius: $_button-draw__border-radius;
+    transition: $_button-draw__transition;
+    box-shadow: $_button-draw__box-shadow;
+
+    &:hover{
+        color: $_button-draw__hover__color;
+        border: $_button-draw__hover__border;
+        background: $_button-draw__hover__background-color;
+        box-shadow: $_button-draw__box-shadow;
+    }
+}
+
+
+@mixin triangle-arrow(
+    $_datepicker__triangle-size: 8px,
+    $_datepicker__background-color: $body__background-color,
+    $_datepicker__border-color: $body__background-color
+) {
+    margin-left: -$_datepicker__triangle-size;
+    position: absolute;
+  
+    &,
+    &::before {
+      box-sizing: content-box;
+      position: absolute;
+      border: $_datepicker__triangle-size solid transparent;
+  
+      height: 0;
+      width: 1px;
+    }
+  
+    &::before {
+      content: "";
+      z-index: -1;
+      border-width: $_datepicker__triangle-size;
+  
+      left: -$_datepicker__triangle-size;
+      border-bottom-color: $_datepicker__border-color;
+    }
+}
+
+  
+@mixin triangle-arrow-up(
+    $_datepicker__triangle-size: 8px,
+    $_datepicker__background-color: $body__background-color,
+    $_datepicker__border-color: $body__background-color
+) {
+    @include triangle-arrow;
+  
+    top: 0;
+    margin-top: -$_datepicker__triangle-size;
+  
+    &,
+    &::before {
+      border-top: none;
+      border-bottom-color: $_datepicker__background-color;
+    }
+  
+    &::before {
+      top: -1px;
+      border-bottom-color: $_datepicker__border-color;
+    }
+}
+  
+@mixin triangle-arrow-down(
+    $_datepicker__triangle-size: 8px,
+    $_datepicker__background-color: $body__background-color,
+    $_datepicker__border-color: $body__background-color
+) {
+    @include triangle-arrow;
+  
+    bottom: 0;
+    margin-bottom: -$_datepicker__triangle-size;
+  
+    &,
+    &::before {
+      border-bottom: none;
+      border-top-color: $_datepicker__border-color;
+    }
+  
+    &::before {
+      bottom: -1px;
+      border-top-color: $_datepicker__border-color;
+    }
+}
+  

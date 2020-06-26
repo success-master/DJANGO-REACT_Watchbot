@@ -1,0 +1,66 @@
+.preview-article {
+    min-height: 450px;
+    border-top: 2px solid #577581;
+}
+
+.preview-article.primary {
+    border-color: #f68b1f;
+}
+
+.preview-article.secondary {
+    border-top: none;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.preview-article.large {
+    min-height: 590px;
+}
+
+.preview-article img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.preview-article.large img {
+    height: 440px;
+}
+
+.preview-article .details {
+    padding: 5px 10px 21px 10px;
+    position: relative;
+    min-height: 150px;
+    background-color: #ebf4f6;
+    font-size: 20px;
+    color: #000a12;
+    font-weight: 900;
+    font-family: Lyon, serif;
+}
+
+.preview-article.primary .details {
+    color: #f68b1f;
+    background-color: rgba(246, 139, 31, 0.1);
+}
+
+.preview-article.secondary .details {
+    background-color: transparent;
+    color: #ebf4f6;
+}
+
+.preview-article .details .date {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: #2d505f;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.preview-article.primary .details .date {
+    color: #f68b1f;
+}
+
+.preview-article.secondary .details .date {
+    color: #ebf4f6;
+}

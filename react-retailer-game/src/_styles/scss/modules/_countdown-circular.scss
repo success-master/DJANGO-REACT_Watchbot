@@ -1,0 +1,54 @@
+.countdown-circular {
+  font-family: "IBM Plex Mono", monospace;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  .circle {
+    height: 150px;
+    width: 150px;
+    svg {
+      height: 150px;
+      width: 150px;
+      .e-c-base {
+        fill: none;
+        stroke: #ebf4f6;
+        stroke-width: 14px
+      }
+
+      .e-c-progress {
+        fill: none;
+        stroke: $orange-color;
+        stroke-width: 14px;
+      }
+
+      .e-c-pointer {
+        fill: #FFF;
+        stroke: $orange-color;
+        stroke-width: 7px;
+      }
+    }
+  }
+  .controlls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .display-remain-time {
+      font-size: 12px;
+      color: #ebf4f6;
+      height: 100%;
+      display: flex; // make us of Flexbox
+      align-items: center; // does vertically center the desired content
+      justify-content: center; // horizontally centers single line items
+      text-align: center;
+      flex-direction: column;
+      > * {
+        color: #ebf4f6!important;
+        flex: none!important;
+        font-size: 12px!important;
+      }
+    }
+  }
+}

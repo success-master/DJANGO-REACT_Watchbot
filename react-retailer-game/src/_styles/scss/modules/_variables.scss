@@ -1,0 +1,159 @@
+// 1. Global
+// 2. Paths
+// 3. Colors
+// 4. Typography
+// 5. Buttons
+// 6. Layout
+
+
+
+// 1. Global
+// ---------
+$body__background-color: #000a12 !default;
+
+
+
+// 2. Paths
+// --------
+$path-icons: "../_assets/icons/";
+
+
+
+// 3. Colors
+// --------
+$primary__color                     : #ffffff !default;
+$secondary__color__lighter          : #ebf4f6 !default;
+$secondary__color__darker           : #577581 !default;
+$table__color__emphasis             : #85a5b0 !default;
+$table__border-color                : #454f54 !default;
+$content__background-color__darker  : #263238 !default;
+$content__background-color__lighter : #2d505f !default;
+$orange-color                       : #f68b1f !default;
+$modal__background-color            : #2c505e !default;
+
+
+
+// 4. Typography
+// -------------
+$font-family__base      : 'IBM Plex Sans', sans-serif !default;
+$font-family__secondary : 'IBM Plex Mono', monospace !default;
+
+$font-size__base    : 12px !default;
+$font-size__medium  : 14px !default;
+$font-size__small   : 10px !default;
+
+$text-color__base: $primary__color !default;
+
+$line-height__base      : 1.5 !default;
+$letter-spacing__base   : 0.04em !default;
+
+$link__color        : #ffffff !default;
+$link__hover__color : $orange-color !default;
+
+
+
+
+// 5. Buttons
+// -------------
+
+// panel button
+$button-panel__font-family              : $font-family__secondary !default;
+$button-panel__font-size                : $font-size__small !default;
+$button-panel__font-weight              : 600 !default;
+$button-panel__text-align               : center !default;
+$button-panel__padding                  : 7px 10px !default;
+$button-panel__height                   : auto !default;
+$button-panel__line-height              : 1 !default;
+$button-panel__letter-spacing           : 0.04em !default;
+$button-panel__color                    : $orange-color !default;
+$button-panel__hover__color             : #ffffff !default;
+$button-panel__background-color         :transparent !default;
+$button-panel__hover__background-color  : $orange-color !default;
+$button-panel__border                   : 0 none !default;
+$button-panel__hover__border            : 0 none !default;
+$button-panel__border-radius            : 0 !default;
+$button-panel__transition               : all 0.5s !default; // OR set value: false
+$button-panel__box-shadow               : none !default;
+
+
+// draw button
+$button-draw__font-family              : $font-family__base !default;
+$button-draw__font-size                : 13px !default;
+$button-draw__font-weight              : 500 !default;
+$button-draw__text-align               : center !default;
+$button-draw__padding                  : 7px 14px !default;
+$button-draw__height                   : auto !default;
+$button-draw__line-height              : 1 !default;
+$button-draw__letter-spacing           : 0.08em !default;
+$button-draw__color                    : $primary__color !default;
+$button-draw__hover__color             : $primary__color !default;
+$button-draw__background-color         :transparent !default;
+$button-draw__hover__background-color  : $orange-color !default;
+$button-draw__border                   : 2px solid $orange-color !default;
+$button-draw__hover__border            : 2px solid $orange-color !default;
+$button-draw__border-radius            : 14px !default;
+$button-draw__transition               : all 0.3s ease !default; // OR set value: false
+$button-draw__box-shadow               : none !default;
+
+
+// le voci (buttons) della menu in sidebar della dashboard
+$button-sidebar-menu__font-family               : $font-family__base !default;
+$button-sidebar-menu__font-size                 : 14px !default;
+$button-sidebar-menu__font-weight               : 400 !default;
+$button-sidebar-menu__text-align                : left !default;
+$button-sidebar-menu__padding                   : 2px 2px 2px 8px !default;
+$button-sidebar-menu__height                    : 30px !default;
+$button-sidebar-menu__line-height               : 1 !default;
+$button-sidebar-menu__color                     : $primary__color !default;
+$button-sidebar-menu__hover__color              : $orange-color !default;
+$button-sidebar-menu__active__color             : $primary__color !default;
+$button-sidebar-menu__background-color          : transparent !default;
+$button-sidebar-menu__hover__background-color   : transparent !default;
+$button-sidebar-menu__active__background-color  : #263238 !default;
+$button-sidebar-menu__border                    : 0 none !default;
+$button-sidebar-menu__hover__border             : 0 none !default;
+$button-sidebar-menu__active__border            : 0 none !default;
+$button-sidebar-menu__border-radius             : 0 !default;
+$button-sidebar-menu__transition                : all 0.3s ease 0s !default; // OR set value: false
+$button-sidebar-menu__box-shadow                : none !default;
+
+
+
+// 6. Layout
+// -------------
+$header__height__desktop        : 68px !default;
+$header__height__mobile         : 93px !default;
+
+$logo__wrapper-width            : 250px !default;
+
+$sidebar-left__width            : 250px !default;
+$sidebar-left__width__mobile    : 270px !default;
+$sidebar-right__width           : 192px !default;
+
+$table-head__height__desktop    : 0px !default; //min-width: 901px
+//$table-head__height__desktop    : 38px !default; //min-width: 901px
+$table-head__height__mobile     : 0px !default;
+
+$bid-actions-tool__height       : 98px !default;
+
+$adv__sidebar__width                    : 0px !default;
+$adv__sidebar__height                   : 0px !default;
+$adv__sidebar__margin-top               : 0px !default;
+$adv__sidebar__margin-bottom            : 0px !default;
+$adv__primary-content__width            : 100% !default;
+$adv__primary-content__height           : 0px !default;
+$adv__primary-content__margin-top       : 0px !default;
+$adv__primary-content__margin-bottom    : 0px !default;
+
+$reference__chart__max-width            : 520px !default;
+$bid__chart__max-width                  : 220px !default;
+
+// BAYER
+// $adv__sidebar__width                    : 200px !default;
+// $adv__sidebar__height                   : 200px !default;
+// $adv__sidebar__margin-top               : 10px !default;
+// $adv__sidebar__margin-bottom            : 10px !default;
+// $adv__primary-content__width            : 100% !default;
+// $adv__primary-content__height           : 90px !default;
+// $adv__primary-content__margin-top       : 10px !default;
+// $adv__primary-content__margin-bottom    : 10px !default;

@@ -1,0 +1,124 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="article-page">
+        <div class="container">
+            <div class="lines"></div>
+            <p class="breadcrumb">
+                <span class="text-uppercase">NEWS</span>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <span class="text-uppercase">
+                    {{ article.category.name }}
+                </span>
+{#                <span>&nbsp;→ {{ article.title }}</span>#}
+            </p>
+            <div class="row heading">
+                <div class="col-lg-3 pt-3 pb-3 pb-lg-0 order-lg-0 order-1">
+                    <p class="published">{{ article.date|date:"F d, Y" }}</p>
+                    <div class="avatar">
+                        {% if article.author.avatar.url != None %}
+                            <img src="{{ article.author.avatar.url }}" alt="{{ article.author.first_name }} {{ article.author.last_name }}" />
+                        {% else %}
+                            <img src="{% static "blog/images/placeholder.jpg" %}" alt="{{ article.author.first_name }} {{ article.author.last_name }}" />
+                        {% endif %}
+
+                    </div>
+                    <p class="author">
+                        {{ article.author.first_name }} {{ article.author.last_name }}
+                    </p>
+                    <div class="share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+{#                        <a href="#">#}
+{#                            <i class="fa fa-instagram" aria-hidden="true"></i>#}
+{#                        </a>#}
+                        <a href="{{ share.linkedin }}">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="{{ share.twitter }}">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="{{ share.facebook }}">
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        </a>
+{#                        <a href="#">#}
+{#                            <i class="fa fa-whatsapp" aria-hidden="true"></i>#}
+{#                        </a>#}
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <h1 class="title">
+                        {{ article.title|safe }}
+                    </h1>
+                    <p class="subtitle">
+                        {{ article.subtitle|safe }}
+                    </p>
+                </div>
+            </div>
+            <div class="evidence-photo">
+                <img src="{{ article.img.url }}" alt="{{ article.img_title }}" />
+            </div>
+            <div class="row content">
+                <div class="col-lg-3">
+                    <p class="description-photo">
+                        ↑<br>
+                        {{ article.img_name }}
+                    </p>
+                    <p class="photographer">
+                        © {{ article.img_author }}
+                    </p>
+                </div>
+                <div class="col-lg-9">
+                    <p class="description-article">
+                        {{ article.description|safe }}
+                    </p>
+                    <div class="banner">
+                        <div class="link"></div>
+                    </div>
+                </div>
+            </div>
+            {% if article.img_secondary.url != None %}
+                <div class="evidence-photo medium">
+                    <img src="{{ article.img_secondary.url }}" alt="{{ article.img_secondary_name }}" />
+                </div>
+            {% endif %}
+            <div class="row content">
+                <div class="col-lg-3">
+                    {% if article.img_secondary_name != None %}
+                        <p class="description-photo">
+                            ↑<br>
+                            {{ article.img_secondary_name }}
+                        </p>
+                    {% endif %}
+                    {% if article.img_secondary_author != None %}
+                        <p class="photographer">
+                            © {{ article.img_secondary_author }}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="col-lg-9">
+                    <p class="description-article">
+                        {{ article.text|safe }}
+                    </p>
+                    <div class="banner">
+                        <div class="link"></div>
+                    </div>
+                    <div class="related-series">
+                        <h5>
+                            Read the other articles in this series:
+                        </h5>
+                        {% for story in related_stories %}
+                            <a href="/{{ story.get_url }}">
+                                <img class="arrow" src="{% static 'blog/icons/arrow-right.svg' %}" alt="" />
+                                <span>{{ story.title }}</span>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for category in categories %}
+        {% include 'category-preview-articles.html' with category=category is_authenticated=is_authenticated %}
+    {% endfor %}
+{% endblock content %}

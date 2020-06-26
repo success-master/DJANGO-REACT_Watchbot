@@ -1,0 +1,180 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="step2-page">
+    <div class="container">
+        <form method="post" id="profile-form" class="step2-form">
+            {% csrf_token %}
+
+            <div class="row">
+            <div class="col-12">
+                <p class="email-label mb-1">EMAIL</p>
+                <p class="email">{{ user_form.email.value }}</p>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ user_form.first_name.id_for_label }}">First name</label>
+                        {{ user_form.first_name }}
+                        {{ user_form.first_name.errors }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ user_form.last_name.id_for_label }}">Last name</label>
+                        {{ user_form.last_name }}
+                        {{ user_form.last_name.errors }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ user_form.phone_number.id_for_label }}">Phone</label>
+                        {{ customer_form.phone_number }}
+                        {{ customer_form.phone_number.errors }}
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <div class="form-group">
+                        <label for="{{ customer_form.terms_and_privacy_policy.id_for_label }}">Newsletter Active</label>
+                        {{ customer_form.terms_and_privacy_policy }}
+                        {{ customer_form.terms_and_privacy_policy.errors }}
+                    </div>
+                </div>
+
+            {{ customer_form.non_field_errors}}
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+{% block extra_body_script %}
+<script type="application/javascript">
+var autocompleteBilling, autocompleteShipping;
+
+function initAutocomplete() {
+    const countries = [
+        'it',
+        'at',
+        'be',
+        'pt',
+        'bg',
+        'es',
+        'hr',
+        'cy',
+        'cz',
+        'dk',
+        'ee',
+        'fi',
+        'fr',
+        'dd',
+        'de',
+        'gi',
+        'gr',
+        'gp',
+        'gg',
+        'hu',
+        'is',
+        'ie',
+        'im',
+        'je',
+        'lv',
+        'li',
+        'lt',
+        'lu',
+        'mt',
+        'mq',
+        'yt',
+        'mc',
+        'nl',
+        'no',
+        'pl',
+        're',
+        'ro',
+        'bl',
+        'mf',
+        'pm',
+        'sm',
+        'sk',
+        'si',
+        'se',
+        'ch',
+        'gb',
+    ];
+  autocompleteBilling = new google.maps.places.Autocomplete(
+      document.getElementById('billing_address_autocomplete'), {
+          types: ['geocode'],
+          componentRestrictions: {
+              country: countries,
+          }
+      });
+  autocompleteBilling.setFields(['address_components']);
+  autocompleteBilling.addListener('place_changed', () => fillInAddress(autocompleteBilling));
+  autocompleteShipping = new google.maps.places.Autocomplete(
+      document.getElementById('shipping_address_autocomplete'), {
+          types: ['geocode'],
+          componentRestrictions: {
+              country: countries,
+          }
+      });
+  autocompleteShipping.setFields(['address_components']);
+  autocompleteShipping.addListener('place_changed', () => fillInAddress(autocompleteShipping, 'shipping_'));
+}
+function fillInAddress(autocomplete, prefix = '') {
+    // Get the place details from the autocomplete object.
+    const place = autocomplete.getPlace();
+    let route = '';
+    let number = '';
+    for (let i = 0; i < place.address_components.length; i++) {
+        const component = place.address_components[i];
+        for (let j = 0; j < component.types.length; j++) {
+            console.log(i, j);
+            const type = component.types[j];
+            console.log(type, component);
+            switch(type) {
+                case 'street_number':
+                    number = component['short_name'];
+                    break;
+                case 'route':
+                    route = component['short_name'];
+                    break;
+                case 'locality':
+                    $('#id_'+ prefix +'city').val(component['short_name']);
+                    break;
+                case 'administrative_area_level_1':
+                    $('#id_'+ prefix +'state').val(component['short_name']);
+                    break;
+                case 'country':
+                    $('#id_'+ prefix +'country').val(component['short_name']);
+                    break;
+                case 'postal_code':
+                    $('#id_'+ prefix +'zip_code').val(component['short_name']);
+                    break;
+            }
+        }
+    }
+    if (number.length) {
+        route += ', ' + number;
+    }
+    $('#id_'+ prefix +'address').val(route);
+}
+</script>
+<script>
+$(document).ready(function () {
+    $('#profile-form').submit(function () {
+        $('input[name="address"]').attr('value',$('#billing_address_autocomplete').val())
+        $('input[name="shipping_address"]').attr('value', $('#shipping_address_autocomplete').val())
+        return True
+    });
+    $('input[name=phone_number]').on('change', function () {
+        $('#confirm_phone_number_container').slideDown();
+    })
+});
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOHawrHgQiyZKHQ4EYcwTHxcv2qYOE1Vg&libraries=places&callback=initAutocomplete"
+        async defer></script>
+{% endblock extra_body_script %}

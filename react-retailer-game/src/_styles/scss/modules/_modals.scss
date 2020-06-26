@@ -1,0 +1,1176 @@
+$modal__content__border-color: #4c6974 !default;
+
+.ui.modal{
+    & > .header,
+    & > .actions,
+    & > .content{
+        background: $modal__background-color;
+        color: #fff;
+        border: 0 none;
+        font-family: $font-family__base;
+    }
+
+    .orange__btn,
+    .dark__btn,
+    .gray-btn{
+        border-radius: 15px;
+        font-family: $font-family__secondary;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        min-width: 150px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &.full-width{
+            width: 100%;
+        }
+    }
+
+    .orange__btn{
+        background: $orange-color;
+        border: 0 none;
+        color: #fff;
+        /*margin: 5px 0 10px;*/
+    }
+
+    .dark__btn{
+        background: transparent;
+        border: 1px solid $table__color__emphasis;
+        color: $table__color__emphasis;
+    }
+
+    .gray-btn{
+        background: $table__color__emphasis;
+        border: 0 none;
+        color: #fff;
+        min-width: auto;
+    }
+
+    .btn-show-more__container{
+        border-top: 0 none !important;
+        margin-top: 5px;
+
+        .btn-show-more{
+            display: inline-block;
+            vertical-align: baseline;
+            width: 100%;
+            position: relative;
+            font-size: 10px;
+            color: $table__color__emphasis !important;
+            text-align: center;
+            letter-spacing: 0.08em;
+            border: 1px solid $table__color__emphasis !important;
+            background: transparent !important;
+            margin: 0;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            cursor: pointer;
+            outline: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+
+            &:hover,
+            &:active,
+            &:focus{
+                color: $table__color__emphasis !important;
+                border: 1px solid $table__color__emphasis !important;
+                background: transparent !important;
+                outline: 0;
+            }
+
+            span{
+                position: relative;
+                top: 2px;
+                margin-right: 5px;
+                font-size: 16px;
+                line-height: 9px;
+                font-weight: bold;
+                color: $table__color__emphasis;
+            }
+        }
+    }
+
+
+    .close-modal-btn__container{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+
+        .close-modal-btn{
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            &:after,
+            &:before{
+                content: '';
+                display: block;
+                width: 20px;
+                height: 1px;
+                position: absolute;
+                top: 11px;
+                left: 2px;
+                background-color: #bfc0c1;
+            }
+
+            &:after{
+                transform: rotate(45deg);
+            }
+
+            &:before{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .orange{
+        color: $orange-color !important;
+    }
+}
+
+
+
+.ui.modal.modal-container{
+    @media only screen and (min-width: 768px){
+        width: 96%;
+        margin: 0 0 0 -48%;
+    }
+
+    @media only screen and (min-width: 992px){
+        width: 800px;
+        margin: 0 0 0 -400px;
+    }
+
+    .ui.container{
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        & > .ui.grid{
+            margin-left: 0;
+            margin-right: 0;
+
+            & > .row{
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    & > .content{
+        padding: 1.5rem 2rem;
+
+        @media only screen and (max-width: 767px){
+            padding: 1.5rem !important;
+        }
+
+        .actions{
+            @include flex-block(
+                $_wrap: wrap,
+                $_justify-content: space-between,
+                $_align-items: center,
+                $_align-content: center
+            );
+            @media only screen and (min-width: 768px){
+                max-width: 320px;
+                margin-left: auto;
+
+                &.data-to-confirm{
+                    max-width: 350px;
+                }
+            }
+
+            @media only screen and (max-width: 420px){
+                /*justify-content: center;*/
+                &.data-to-confirm{
+                    justify-content: flex-end;
+
+                    & > div:first-child{
+                        order: 2;
+                    }
+                    & > div:last-child{
+                        order: 1;
+                    }
+                }
+            }
+
+            &.one-button{
+                justify-content: flex-end;
+            }
+
+            & > div{
+                padding: 0 10px;
+
+                &:first-child{
+                    margin-left: -10px;
+                }
+
+                &:last-child{
+                    margin-right: -10px;
+                }
+            }
+
+            & > span{
+                @include flex-block(
+                    $_wrap: wrap,
+                    $_justify-content: space-between,
+                    $_align-items: center,
+                    $_align-content: center
+                );
+
+                @media only screen and (max-width: 420px){
+                    justify-content: center;
+                }
+            }
+
+            button{
+                margin: 10px 0;
+                /*margin-top: 10px;
+                margin-left: 15px;
+                margin-right: 15px;*/
+            }
+        }
+    }
+
+
+    .col-left,
+    .col-right{
+        width: 50%;
+        padding-left: 0;
+        padding-right: 0;
+
+        .head-wrapper{
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+
+            .actions{
+                max-width: none;
+                margin-left: 0;
+            }
+
+            h4,
+            h3{
+                font-size: 20px;
+                font-family: $font-family__base;
+                font-weight: 400;
+                line-height: 1.1;
+                margin: 0;
+                padding: 0 0 7px;
+                color: #ffffff;
+
+                &.model-name{
+                    color: #f68b1f;
+                }
+            }
+
+            .head-wrapper__block{
+                @include flex-block(
+                    $_direction: column
+                );
+                width: 100%;
+                padding: 7px 0;
+
+                & > span:first-child{
+                    font-family: $font-family__secondary;
+                    font-size: 12px;
+                    color: $table__color__emphasis;
+                }
+
+                & > span:last-child{
+                    font-size: 20px;
+
+                    &::first-letter{
+                        text-transform: uppercase;
+                    }
+                }
+
+                &.half-width{
+                    width: 50%;
+
+                    &:nth-child(even){
+                        float: left;
+                        padding-right: 7px;
+                    }
+
+                    &:nth-child(odd){
+                        float: right;
+                        padding-left: 7px;
+                    }
+                }
+            }
+        }
+
+        h4.price{
+            font-size: 20px;
+            font-family: $font-family__base;
+            font-weight: 400;
+            line-height: 1.1;
+            margin: 0;
+            padding: 0 0 7px;
+            color: $table__color__emphasis;
+
+            span{
+                font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-left: 10px;
+            }
+        }
+
+
+        .content-wrapper{
+            @include flex-block(
+                $_wrap: wrap
+            );
+
+            @media only screen and (min-width: 768px){
+                flex-wrap: nowrap;
+            }
+
+            form,
+            .modalBkgCosts__container{
+                width: 100%;
+            }
+        }
+    }
+
+
+    .col-right{
+        margin-top: 35px;
+        @media only screen and (min-width: 768px){
+            max-width: 335px;
+        }
+
+        h4.price span{
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        .modalBkgCosts,
+        .modalBkgTotal{
+            min-height: 34px;
+            margin: 0 auto;
+            padding: 5px 7px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            border-top: 1px solid $modal__content__border-color;
+            @include flex-block(
+                $_justify-content: space-between,
+                $_align-content: center,
+                $_align-items: center
+            );
+
+            .modalBkgValue{
+                font-size: inherit;
+                color: inherit;
+                font-family: $font-family__secondary;
+                font-weight: 500;
+                white-space: nowrap;
+
+                i{
+                    font-style: normal;
+                    padding-left: 3px;
+                }
+            }
+
+            &.orange{
+                border-top-color: $orange-color;
+                color: $orange-color;
+            }
+
+            .fld__msg__totals{
+                font-size: 10px;
+                text-transform: none;
+                font-weight: 400;
+            }
+        }
+
+        @media only screen and (min-width: 768px){
+            margin-top: 0;
+            padding-left: 15px;
+        }
+    }
+
+
+    .col-watch-details{
+        h4.price{
+            margin: 7px 0 3px;
+        }
+
+        ul,
+        .image-container{
+            width: 50%;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li{
+                display: inline-block;
+                width: 100%;
+                vertical-align: top;
+                border-top: 1px solid $modal__content__border-color;
+                padding: 5px;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 0.08em;
+
+                & > span{
+                    display: block;
+                    font-size: 10px;
+                    line-height: 14px;
+                    color: $table__color__emphasis;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+
+        .image-container{
+            @include flex-block(
+                $_direction         : column,
+                $_wrap              : wrap
+            );
+
+            .image-wrapper{
+                text-align: center;
+                /*border: 1px solid $modal__content__border-color;*/
+                padding: 10px;
+
+                @include flex-block(
+                    $_align-items: center,
+                    $_align-content: center,
+                    $_justify-content: center
+                );
+            }
+
+            .btn-wrapper{
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            img,
+            .fake-image{
+                display: inline-block;
+                vertical-align: top;
+                max-width: 100%;
+            }
+        }
+
+        .btn-wrapper{
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        @media only screen and (min-width: 320px){
+            ul{
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .date-picker-wrapper,
+    .fld__price-wrapper{
+        align-items: center;
+        align-content: center;
+
+        & > .field{
+            width: auto;
+            flex: 0 0 auto;
+            position: relative;
+
+            .fld__msg__warning{
+                position: absolute;
+                top: 100%;
+                left: 7px;
+                color: $orange-color;
+                /*color: #ebf4f6;*/
+                font-size: 9px;
+
+                span{
+                    display: inline-block;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        input[type=date],
+        input[type=number]{
+            color: #ffffff;
+            font-family: $font-family__base;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        input[type=date]::placeholder,
+        input[type=number]::placeholder{
+            color: #ffffff;
+        }
+
+        label{
+            font-size: 13px;
+            /*letter-spacing: 0.04em;*/
+            font-weight: 600;
+            line-height: 20px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+    }
+
+    .date-picker-wrapper{
+        margin-bottom: 20px;
+        margin-top: 13px;
+        position: relative;
+
+        & > div:first-child{
+            flex: 0 0 55px;
+        }
+
+        &.data-to-confirm{
+            & > .field{
+                & > span{
+                    line-height: 20px;
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    color: #fff;
+                    font-weight: 600;
+                }
+
+                & > span + span{
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        button.ui.set-time-slot{
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            min-height: auto;
+            box-shadow: none;
+            line-height: 19px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            font-family: $font-family__base;
+            font-weight: 600;
+            transition: none;
+        }
+
+        .react-date-picker__wrapper{
+            border: 0 none;
+
+            input[type=date],
+            input[type=number]{
+                padding: 0;
+                border: 0 none;
+                line-height: 20px;
+                font-size: 13px;
+                letter-spacing: 1px;
+                color: #ffffff;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            input[type=date]:focus,
+            input[type=number]:focus,
+            input[type=date]::selection,
+            input[type=number]::selection{
+                color: #ffffff;
+                border: 0 none;
+                outline: 0 none;
+                box-shadow: none;
+                background: transparent;
+            }
+
+            .react-date-picker__calendar-button{
+                display: none;
+            }
+
+            .react-date-picker__inputGroup__divider{
+                padding: 0;
+            }
+        }
+
+        .react-date-picker__calendar{
+            .react-calendar{
+                background: $body__background-color;
+                color: #fff;
+                font-family: $font-family__base;
+                border: 0 none;
+            }
+
+            .react-calendar__navigation{
+                button{
+                    color: #fff;
+                    background-color: $body__background-color;
+                    opacity: 1;
+                }
+
+                button[disabled]{
+                    color: #fff;
+                    background-color: $body__background-color;
+                    opacity: .5;
+                }
+            }
+
+            .react-calendar__tile{
+                color: #fff;
+
+                &:disabled{
+                    background-color: rgba(0,10,18, 0.5);
+                }
+
+                &:hover{
+                    background-color: $secondary__color__darker;
+                }
+            }
+
+            .react-calendar__month-view__days__day--weekend{
+                color: red !important;
+            }
+
+            .react-calendar__tile--active{
+                background-color: $secondary__color__darker;
+            }
+        }
+    }
+
+    .date-picker-wrapper.data-to-confirm > .field,
+    .fld__price-wrapper > .field.data-to-confirm{
+        & > span{
+            line-height: 20px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        & > span + span{
+            margin-left: 20px;
+        }
+    }
+
+    .fld__price-wrapper{
+        position: relative;
+        margin-bottom: 35px;
+
+        input[type=number]{
+            padding: 5px 10px;
+            font-size: 12px;
+            line-height: 12px;
+            font-family: $font-family__secondary;
+            font-weight: 500;
+            text-transform: lowercase;
+            border: 1px solid $orange-color;
+            width: 200px;
+            display: block;
+        }
+
+        .ui.button {
+          background: #85a5b0;
+          //border-radius: 15px;
+          border: 0 none;
+          color: #fff;
+          width: 40px;
+          font-size: 11px;
+          padding: 8px 8px;
+        }
+    }
+
+    .fld__agree{
+        justify-content: space-around;
+        margin-top: 20px;
+
+        & > .field{
+            padding-bottom: 10px;
+        }
+
+        .ui.checkbox{
+            min-height: 22px;
+            position: relative;
+            @include flex-block(
+                $_align-items: center,
+                $_align-content: center
+            );
+        }
+
+        .ui.checkbox label{
+            position: static;
+            font-size: 10px;
+            text-transform: uppercase;
+            padding-left: 30px;
+            line-height: normal;
+        }
+
+        .ui.checkbox .box:before,
+        .ui.checkbox label:before{
+            width: 22px;
+            height: 22px;
+            border-radius: 11px;
+            background-color: transparent;
+            border: 1px solid #d1d1d1;
+            transform: translateY(50%);
+            top: -11px;
+        }
+
+        .ui.checkbox input:checked~.box:after,
+        .ui.checkbox input:checked~label:after{
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #d1d1d1;
+            left: 7px;
+            top: 3px;
+            transform: translateY(50%);
+        }
+
+        & + .agree-message{
+            font-size: 10px;
+            margin-top: 0;
+
+            @media only screen and (min-width: 768px){
+                margin-top: 0;
+            }
+        }
+
+        @media only screen and (max-width: 450px){
+            justify-content: flex-start;
+            & > .field{
+                width: 100%;
+                flex: 0 1 100%;
+            }
+
+            & > .field + .field{
+                padding-top: 15px;
+            }
+        }
+    }
+}
+
+
+
+
+// OVVERRIDE CONTENT STYLE
+//-------------------------
+// Bayer || seller
+// ------------------------
+.ui.modal.modal-container{
+    & > .content.bayer{
+        .col-watch-details .image-container .image-wrapper{
+            background-color: $body__background-color;
+        }
+
+        .date-picker-wrapper{
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        /*.fld__price-wrapper{
+
+        }*/
+
+        h4.price{
+            padding: 0;
+            margin-bottom: 17px;
+        }
+    }
+
+    & > .content.seller{
+        h4.price{
+            padding: 0;
+            margin-bottom: 17px;
+        }
+
+        .col-watch-details .image-container .image-wrapper{
+            background-color: #fff;
+        }
+    }
+}
+
+
+
+
+// OVVERRIDE MODAL STYLE
+//-------------------------
+// Join Trade
+// ------------------------
+.ui.modal.modal-container.join-trade{
+
+    .date-picker-wrapper{
+        margin-bottom: 13px;
+        margin-top: 3px;
+
+        .field{
+            & > label,
+            & > span{
+                color: $table__color__emphasis;
+            }
+
+            & > span + span{
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+
+
+// OVVERRIDE MODAL STYLE
+//-------------------------
+// Matched Trade
+// ------------------------
+.ui.modal.modal-container.matched-trade__modal-container{
+    & > .content{
+        background: #263138;
+    }
+
+    .col-right{
+        .modalBkgCosts{
+            border-top: 1px solid #495257;
+        }
+    }
+
+    .col-watch-details{
+        ul{
+            li{
+                border-top: 1px solid #495257;
+            }
+        }
+    }
+
+    .payment-methods__container{
+        ul{
+            width: 100%;
+
+            li{
+                border-top: 0 none;
+                margin-bottom: 15px;
+                padding-left: 0;
+                padding-right: 0;
+
+                h4{
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-bottom: 7px;
+                }
+            }
+        }
+    }
+
+    .payment-successful__container{
+        p{
+            font-size: 20px;
+        }
+    }
+
+    .dark__btn{
+        background: #85a5b0;
+        color: #fff;
+    }
+}
+
+
+
+//-------------------------
+// DDL aka popup
+// ------------------------
+.ui.popup.time-slot__popup,
+.time-slot__popup{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    display: inline-block;
+    width: auto;
+    background: $body__background-color;
+    color: #fff;
+    border-radius: 0;
+    border: 0 none;
+    padding: 15px;
+    margin-top: 10px;
+
+    .time-slot__triangle{
+        position: absolute;
+        @include triangle-arrow-up;
+        left: 70px;
+        margin-left: 0;
+        margin-top: -7px;
+    }
+
+    .time-slot__header{
+        margin-bottom: 10px;
+    }
+
+    .time-slot__content{
+        @include flex-block(
+            $_direction: column
+        );
+
+        & > div{
+            @include flex-block(
+                $_direction: row,
+                $_justify-content: space-around
+            );
+
+            button.ui.button{
+                background: $content__background-color__darker;
+                color: #fff;
+                font-weight: 500;
+                font-size: 11px !important;
+                padding: 5px;
+                margin: 3px;
+
+                &:first-child{
+                    margin-left: 0;
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                &:hover{
+                    background: #263238;
+                }
+            }
+        }
+    }
+}
+
+
+
+.ui.dimmer {
+    background-color:  rgba(0,10,18, 0.9);
+}
+
+.ui.modal:not(.modal-container){
+    .modalColor2 {
+        color: #d65700;
+    }
+
+    .modalBkgCosts {
+        background: $content__background-color__darker;
+        padding: 2px 12px;
+        margin-bottom: 1px;
+    }
+
+    .modalBkgTotal {
+        background: $content__background-color__darker;
+        padding: 4px 12px;
+    }
+
+    .modalBkgDeposit {
+        background: $content__background-color__darker;
+        margin-top: 6px;
+        padding: 4px 12px;
+    }
+
+    .modalBkgValue {
+        float: right;
+    }
+
+    .modalPw {
+        color: #fff !important;
+        border-bottom: 1px solid #d1d2d3 !important;
+        max-width: 200px;
+        background: none !important;
+    }
+}
+
+
+// SISTEM MESSAGE MODAL STYLE
+//-------------------------
+//
+// ------------------------
+.ui.modal.message-modal{
+    width: 96%;
+    margin: 0 0 0 -48%;
+
+    @media only screen and (min-width: 640px){
+        width: 600px;
+        margin: 0 0 0 -300px;
+    }
+
+    & > .header{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    & > .actions{
+        .gray-btn{
+            min-width: 120px;
+        }
+    }
+
+    & > .content{
+        font-size: 16px;
+        font-weight: 400;
+        color: $table__color__emphasis;
+
+        .description{
+            p:first-child {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+
+// NOTIFICATION STYLE
+.modal-notification-container{
+    width: 300px !important;
+    max-height: none !important;
+    position: absolute;
+    top: 43px;
+    right: 8px;
+    z-index: 1000;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: $body__background-color;
+
+    @media only screen and (min-width: 441px){
+        width: 400px !important;
+    }
+
+    .dark__btn{
+        border-radius: 15px;
+        font-family: $font-family__secondary;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        min-width: 150px;
+        background: $body__background-color !important;
+        border: 1px solid $orange-color;
+        color: #fff !important;
+
+        &:hover{
+            background: $body__background-color !important;
+            color: $orange-color !important;
+        }
+    }
+
+    .modal-notification__wrapper,
+    .modal-notification__head,
+    .modal-notification__content,
+    .modal-notification__actions{
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .modal-notification__wrapper{
+        padding: 20px 40px 20px 20px !important;
+        font-size: 20px;
+        font-weight: 400;
+
+        .modal-notification__head{
+            color: $orange-color;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid $orange-color;
+        }
+
+        .modal-notification__content{
+            color: #fff;
+
+            .content-action,
+            .primary-message,
+            .secondary-message,
+            .reference-name{
+                padding: 10px 0;
+            }
+
+            .secondary-message,
+            .reference-name{
+                font-size: 13px;
+            }
+
+            .reference-name{
+                span{
+                    display: block;
+                }
+            }
+
+            .content-action{
+                text-align: right;
+            }
+
+            & > div:last-child{
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .modal-notification__actions{
+        display: inline-block;
+        width: 100%;
+        padding: 0 40px 20px 20px !important;
+        text-align: right;
+    }
+
+    .close-modal-btn__container{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+
+        .close-modal-btn{
+            width: 25px;
+            height: 25px;
+            border: 0 none;
+            background: transparent;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            cursor: pointer;
+
+            &:after,
+            &:before{
+                content: '';
+                display: block;
+                width: 20px;
+                height: 1px;
+                position: absolute;
+                top: 11px;
+                left: 2px;
+                background-color: #bfc0c1;
+            }
+
+            &:after{
+                transform: rotate(45deg);
+            }
+
+            &:before{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.fld__msg__warning_filled {
+    position: absolute;
+    top: 100%;
+    left: 7px;
+    color: $orange-color;
+    /*color: #ebf4f6;*/
+    font-size: 9px;
+
+    span{
+        display: inline-block;
+        margin-top: 3px;
+    }
+}

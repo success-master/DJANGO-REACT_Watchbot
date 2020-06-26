@@ -1,0 +1,233 @@
+.watches-search__container{
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    @media only screen and (min-width: 768px){
+        width: 98%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @media only screen and (max-width: 900px){
+        .actBar{
+            max-width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 767px){
+        float: right;
+        width: 60%;
+        margin: 10px auto 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+
+    .search-watch{
+        & > .Select-control {
+            background-color: $content__background-color__darker;
+            border: 1px solid #3f545d;
+            border-radius: 0;
+            height: 30px;
+        }
+      
+        .Select-placeholder{
+          line-height: 30px;
+          padding-left: 45px;
+        }
+      
+        .Select-input > input{
+          padding: 0;
+          padding-left: 30px;
+          height: 30px;
+          color: #fff;
+        }
+      
+        .Select-arrow-zone{
+          position: absolute;
+          top: 5px;
+          left: 8px;
+      
+          & > div{
+            position: static !important;
+          }
+        }
+      
+        .Select-input{
+          height: 30px;
+        }
+      
+      
+        .Select-menu-outer{
+            background: $body__background-color;
+            color: #fff;
+            border-radius: 0;
+            border: 0 none;
+        }
+        
+        .Select-menu-outer *{
+            color: #fff !important;
+            font-weight: 500 !important;
+            font-size: 11px !important;
+            background-color: $body__background-color;
+        }
+    }
+
+    .Select.is-focused:not(.is-open) > .Select-control{
+        background: $content__background-color__darker;
+        border-color: #3f545d;
+        box-shadow: none;
+    }
+    
+    .Select.is-searchable.is-focused:not(.is-open) > .Select-control {
+        cursor: default;
+        color: #fff;
+        background: $content__background-color__darker;
+    }
+
+    .Select.has-value.Select--single > .Select-control {
+        .Select-value{
+            padding-left: 37px;
+            padding-right: 25px;
+            font-size: 11px;
+            line-height: 30px;
+
+            .Select-value-label{
+                color: #fff;
+            }
+        }
+
+        .Select-clear-zone{
+            color: #fff;
+            right: 3px;
+        }
+    }
+}
+
+.ui.grid.table-body.watchlist-table{
+    .panelRow{
+        @media only screen and (min-width: 901px){
+            & > .column.col-actions{
+
+            }
+        }
+
+        &.active{
+            /*background-color: $content__background-color__lighter;*/
+        }
+
+        & > .column{
+            .model-wrapper{
+                text-transform: uppercase;
+            }
+
+            &.col-actions.remove{
+                .button{
+                    color: $table__color__emphasis;
+
+                    &:hover{
+                        color: #fff;
+                        background: $table__color__emphasis;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 900px){
+            justify-content: space-between !important;
+
+            & > .column.col-actions:not(.remove){
+                width: 50% !important;
+                flex: 0 0 50% !important;
+            }
+
+            & > .column.col-actions.remove{
+                width: 20% !important;
+                flex: 0 0 20% !important;
+                align-items: flex-start !important;
+                padding-left: 0 !important;
+                padding-bottom: 15px !important;
+            }
+
+            & > .column.col-date{
+                width: 20% !important;
+                flex: 0 0 20% !important;
+                padding-bottom: 15px !important;
+            }
+
+            & > .column.col-description{
+                width: 40% !important;
+                flex: 0 0 40% !important;
+            }
+
+            & > .column.col-price{
+                width: 20% !important;
+                flex: 0 0 20% !important;
+            }
+
+            & > .column.col-actions.view-reference{
+                align-items: flex-start !important;
+                padding-left: 0 !important;
+            }
+
+            & > .column.col-actions.show-analytics{
+                align-items: flex-end !important;
+                padding-right: 0 !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px){
+            & > .column.col-description{
+                .model-wrapper{
+                    font-size: 12px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 530px){
+            & > .column.col-description,
+            & > .column.col-date,
+            & > .column.col-price{
+                padding-left: 0 !important;
+            }
+
+            & > .column.col-actions{
+                &.remove{
+                    width: 18% !important;
+                    flex: 0 0 18% !important;
+                }
+
+                .button{
+                    /*font-size: 9px;*/
+                }
+            }
+
+            & > .column.col-description{
+                width: 38% !important;
+                flex: 0 0 38% !important;
+            }
+
+            & > .column.col-price{
+                width: 24% !important;
+                flex: 0 0 24% !important;
+            }
+        }
+    }
+}
+
+.emptyWatchList{
+    text-align: center;
+    margin: 40px auto !important;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 767px){
+    .ui.grid > .row > [class*="primary-content"].column .watchlist-container .page-title{
+        float: left;
+        width: 40%;
+        text-align: left;
+        padding-left: 1rem;
+    }
+}

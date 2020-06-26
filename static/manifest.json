@@ -1,0 +1,11 @@
+{
+  "short_name": "Watchbot",
+  "name": "Watchbot",
+  "icons": [],
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "browser",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "gcm_sender_id": "103953800507"
+}

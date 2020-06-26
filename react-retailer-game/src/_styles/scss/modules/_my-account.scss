@@ -1,0 +1,388 @@
+$tab__height: 46px !default;
+
+.slidingPane.my-account{
+    width: 100% !important;
+    max-width: 800px !important;
+
+    @media only screen and (min-width: 768px) {
+        width: 98% !important;
+    }
+
+    .ui.attached.tabular.menu{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        height: $tab__height;
+
+        & > a:first-child{
+            padding-left: 40px;
+        }
+
+        & > .item:not(.active){
+            background: $content__background-color__darker !important;
+        }
+    }
+
+    .ui.segment.tab{
+        height:-webkit-calc(100vh - #{$tab__height});
+        height: calc(100vh - #{$tab__height});
+        overflow-y: auto;
+        padding-bottom: 150px;
+    }
+
+    .slide-pane__content{
+        overflow-y: unset;
+    }
+
+    .btn-logout{
+        display: inline-block;
+        vertical-align: middle;
+        border: 1px solid $orange-color;
+        border-radius: 15px;
+        color: $orange-color;
+        font-family: $font-family__secondary;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center !important;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        min-width: 150px;
+        padding: 7px 20px;
+    }
+
+
+    .watches-search__container{
+        float: left;
+        width: 100%;
+        max-width: 365px;
+        padding: 20px 22px;
+
+        .actBar{
+            margin: 0;
+        }
+
+        .search-watch{
+            & > .Select-control {
+                background-color: $body__background-color;
+                border: 1px solid $orange-color;
+            }
+        }
+    }
+
+
+    .settings-save{
+        @include flex-block(
+            $_wrap: wrap,
+            $_justify-content: space-between
+        );
+        margin: 0;
+        padding: 25px 0;
+        width: 100%;
+        @media only screen and (max-width: 320px) {
+            justify-content: center;
+
+            & > div:first-child{
+                order: 2;
+                padding-bottom: 20px;
+            }
+
+            & > div:last-child{
+                order: 1;
+                padding-bottom: 20px;
+            }
+        }
+
+
+        button.ui.button.settings-cancel-btn,
+        button.ui.button.settings-save-btn{
+            font-family: "IBM Plex Mono", monospace;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            border-radius: 15px;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+        }
+
+        button.ui.button.settings-save-btn{
+            background: transparent !important;
+            border: 1px solid $orange-color !important;
+            color: $orange-color !important;
+        }
+    }
+
+
+    /* bayer */
+    .account__bayer{
+        font-family: $font-family__base;
+
+        .ui.form{
+            width: 100%;
+            @include flex-block(
+                $_wrap: wrap
+            );
+
+            input[type=date],
+            input[type=text],
+            input[type=email],
+            input[type=tel],
+            input[type=number],
+            input[type=password],
+            input[type=time]{
+                font-size: 12px;
+                font-family: $font-family__base;
+                font-weight: 400;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            input:-internal-autofill-selected{
+                background-color: transparent !important;
+            }
+        }
+
+        .account__block{
+            width: 100%;
+            flex: 0 0 100%;
+            padding: 0 22px;
+
+            @media only screen and (min-width: 641px) {
+                width: 50%;
+                flex: 0 0 50%;
+            }
+
+            .paneAccountHeader{
+                margin-top: 20px;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-family: $font-family__secondary;
+            }
+
+            .paneAccountContent{
+                padding: 5px 0;
+                min-height: auto;
+
+                .label-wrapper{
+                    font-size: 12px;
+                    color: $table__color__emphasis;
+                    font-weight: 500;
+                }
+
+                .paneAccount50{
+                    &.input-wrapper{
+                        font-size: 12px;
+                    }
+                }
+
+                .paneAccount{
+                    width: 100%;
+                }
+
+                &.address-list{
+                    align-items: flex-start;
+
+                    .paneAccount50.input-wrapper{
+                        @include flex-block(
+                            $_direction: column
+                        );
+                    }
+
+                    .address-list__address-container + .address-list__address-container{
+                        margin-top: 25px;
+                    }
+
+                    .address-list__address-container{
+                        .address-list__address-form{
+                            padding: 5px 0;
+                        }
+
+                        .address-list__address{
+                            float: left;
+                            width: 70%;
+                            padding: 0 0 5px;
+                        }
+
+                        .address-list__btn-change{
+                            float: right;
+                            width: 30%;
+                            text-align: right;
+                            padding: 0 0 5px;
+                        }
+
+                        .address-list__preferred-address{
+                            @include flex-block(
+                                $_align-items: center,
+                                $_justify-content: space-between
+                            );
+                            padding: 7px 0 5px;
+                            width: 100%;
+                            border-top: 1px solid #252d33;
+
+                            .ui.checkbox{
+                               label{
+                                    text-transform: lowercase;
+                                    color: #fff !important;
+                                    font-size: 12px;
+                                    padding-left: 25px;
+
+                                    &:before{
+                                        width: 18px;
+                                        height: 18px;
+                                        border-radius: 9px;
+                                        border: 1px solid $orange-color;
+                                        background: transparent;
+                                    }
+
+
+                                }
+
+                                &.checked{
+                                    label{
+                                        &:after{
+                                            content: '';
+                                            position: absolute;
+                                            top: 4px;
+                                            left: 4px;
+                                            width: 10px;
+                                            height: 10px;
+                                            border-radius: 5px;
+                                            background: $orange-color;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+
+                &.address-list__add-new{
+                    border-bottom: 0 none;
+
+                    .ui.button.panel-btn{
+                        margin-left: 0 !important;
+                        margin-right: 0 !important;
+
+                        span{
+                            display: inline-block;
+                            width: 18px;
+                            height: 18px;
+                            position: relative;
+                            top: 4px;
+                            margin-right: 7px;
+
+                            &:before,
+                            &:after{
+                                display: inline-block;
+                                position: absolute;
+                            }
+
+                            &:before{
+                                content: '';
+                                top: 0;
+                                left: 0;
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 9px;
+                                border: 1px solid $orange-color;
+                                background: transparent;
+                                z-index: 0;
+                            }
+
+                            &:after{
+                                content: '+';
+                                z-index: 1;
+                                font-size: 19px;
+                                line-height: 18px;
+                                width: 18px;
+                                top: -1px;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+
+                &.credit-card-container{
+                    flex-wrap: wrap;
+
+                    .paneAccount{
+                        flex: 0 0 50%;
+                    }
+
+                    .manage-credit-card__container{
+                        flex: 0 0 100%;
+                        margin-top: 0;
+
+                        &.open {
+                            padding-bottom: 0;
+                            border-bottom: 0 none;
+                        }
+
+                        .change-credit-card{
+                            @include button-panel(
+                                $_button-panel__padding: 7px 0,
+                                $_button-panel__hover__background-color: transparent
+                            );
+
+                            .change-credit-card__triangle{
+                                display: none;
+                            }
+                        }
+
+                        .manage-credit-card__ddl{
+                            margin-top: 0;
+
+                            select#cc_list{
+                                height: auto;
+                                margin: 0 0 0 -5px;
+                                padding-left: 0;
+                                border: 0 none;
+                                color: #f68b1f !important;
+                                option{
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+
+                        .manage-credit-card__add-new .add-credit-card__row{
+                            .add-credit-card__cell{
+                                label{
+                                    display: none;
+                                }
+
+                                select{
+                                    height: auto;
+                                    margin: 0 0 0 -5px;
+                                    padding-left: 0;
+                                    border: 0 none;
+
+                                    option{
+                                        padding-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .settings-save{
+            padding: 25px 22px;
+        }
+    }
+
+
+    .account__bayer,
+    .account__retailer{
+        select,
+        input::placeholder{
+            color: #fff;
+            font-size: 12px;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 400;
+        }
+    }
+}

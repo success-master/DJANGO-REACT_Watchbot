@@ -1,0 +1,187 @@
+.retailers-page > section > .container {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+.retailers-page {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #2d505f;
+}
+
+.retailers-page .first-row {
+    padding: 0;
+    /*height: 320px;*/
+    background-image: url("../images/about_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.retailers-page .first-row.home {
+    background-image: url("../images/home_background.jpg");
+}
+
+.retailers-page .second-row {
+    background-color: #ebf4f6;
+}
+
+.retailers-page .second-row .title {
+    margin-bottom: 32px;
+}
+
+.retailers-page .second-row .description {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.retailers-page .fake-icon {
+    width: 124px;
+    height: 124px;
+    background-color: #f68b1f;
+}
+
+@media screen and (max-width: 450px) {
+    .retailers-page .fake-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.retailers-page .third-row {
+    background-color: #85a5b0;
+}
+
+.retailers-page .third-row .fa-long-arrow-down {
+    font-size: 50px;
+    color: #fff;
+}
+
+.retailers-page .third-row .title {
+    letter-spacing: 1px;
+}
+
+.retailers-page .third-row .description {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.retailers-page .third-row .more {
+    margin-top: 50px;
+}
+
+.retailers-page .fourth-row {
+    font-size: 20px;
+}
+
+.retailers-page .fourth-row > .container {
+    border-left: 2px solid #d1d1d1;
+    border-right: 2px solid #d1d1d1;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.retailers-page .fourth-row .title,
+.retailers-page .sixth-row .title {
+    margin-bottom: 30px;
+}
+
+.long-arrow-down {
+    font-size: 50px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
+    font-style: initial;
+}
+
+.retailers-page .fourth-row .description,
+.retailers-page .sixth-row .description {
+    margin-top: 30px;
+}
+
+.retailers-page .fifth-row {
+    background-color: #85a5b0;
+}
+
+.retailers-page .fifth-row .title {
+    margin-bottom: 60px;
+}
+
+.retailers-page .fifth-row .data {
+    margin-bottom: 20px;
+}
+
+.retailers-page .fifth-row .data .check {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+    font-size: 45px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
+}
+
+.retailers-page .fifth-row .data .description {
+    color: #263238;
+    display: inline-block;
+    width: calc(100% - 55px);
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.retailers-page .sixth-row {
+    padding: 0;
+    font-size: 20px;
+}
+
+.retailers-page .sixth-row > .container {
+    border-left: 2px solid #d1d1d1;
+    border-right: 2px solid #d1d1d1;
+}
+
+.retailers-page .sixth-row .section {
+    padding: 30px 0;
+    margin: 0 10px;
+}
+
+.retailers-page .sixth-row .section:not(:last-child) {
+    border-bottom: 2px solid #d1d1d1;
+}
+
+.retailers-page .sixth-row .section.last .row {
+    position: relative;
+}
+
+.retailers-page .sixth-row .section.last .row .long-arrow-down {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 10px);
+}
+/*
+.retailers-page img {
+    width: auto;
+    height: 120px;
+}
+*/
+.retailers-page .check img {
+    height: auto;
+    width: auto;
+}
+
+/*ADDED BY ME*/
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+.icon {
+  display: block;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+  font-size: 8em;
+  line-height: 2em;
+  margin: 0 auto;
+}
+section.color h2 {
+  color: #fff;
+}

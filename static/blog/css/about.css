@@ -1,0 +1,166 @@
+.about-page > section > .container {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+.about-page {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #2d505f;
+}
+
+.about-page .first-row {
+    padding: 0;
+    height: 320px;
+    background-image: url("../images/about_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-page .first-row.home {
+    background-image: url("../images/home_background.jpg");
+}
+
+.about-page .second-row {
+    background-color: #ebf4f6;
+}
+
+.about-page .second-row .title {
+    margin-bottom: 32px;
+}
+
+.about-page .second-row .description {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.about-page .fake-icon {
+    width: 124px;
+    height: 124px;
+    background-color: #f68b1f;
+}
+
+@media screen and (max-width: 450px) {
+    .about-page .fake-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.about-page .third-row {
+    background-color: #85a5b0;
+}
+
+.about-page .third-row .fa-long-arrow-down {
+    font-size: 50px;
+    color: #fff;
+}
+
+.about-page .third-row .title {
+    letter-spacing: 1px;
+}
+
+.about-page .third-row .description {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.about-page .third-row .more {
+    margin-top: 50px;
+}
+
+.about-page .fourth-row {
+    font-size: 20px;
+}
+
+.about-page .fourth-row > .container {
+    border-left: 2px solid #d1d1d1;
+    border-right: 2px solid #d1d1d1;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.about-page .fourth-row .title,
+.about-page .sixth-row .title {
+    margin-bottom: 30px;
+}
+
+.long-arrow-down {
+    font-size: 50px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
+    font-style: initial;
+}
+
+.about-page .fourth-row .description,
+.about-page .sixth-row .description {
+    margin-top: 30px;
+}
+
+.about-page .fifth-row {
+    background-color: #85a5b0;
+}
+
+.about-page .fifth-row .title {
+    margin-bottom: 60px;
+}
+
+.about-page .fifth-row .data {
+    margin-bottom: 20px;
+}
+
+.about-page .fifth-row .data .check {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+    font-size: 45px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
+}
+
+.about-page .fifth-row .data .description {
+    color: #263238;
+    display: inline-block;
+    width: calc(100% - 55px);
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.about-page .sixth-row {
+    padding: 0;
+    font-size: 20px;
+}
+
+.about-page .sixth-row > .container {
+    border-left: 2px solid #d1d1d1;
+    border-right: 2px solid #d1d1d1;
+}
+
+.about-page .sixth-row .section {
+    padding: 30px 0;
+    margin: 0 10px;
+}
+
+.about-page .sixth-row .section:not(:last-child) {
+    border-bottom: 2px solid #d1d1d1;
+}
+
+.about-page .sixth-row .section.last .row {
+    position: relative;
+}
+
+.about-page .sixth-row .section.last .row .long-arrow-down {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 10px);
+}
+.about-page img {
+    width: auto;
+    height: 120px;
+}
+
+.about-page .check img {
+    height: auto;
+    width: auto;
+}
+

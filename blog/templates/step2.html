@@ -1,0 +1,281 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="step2-page">
+    <div class="container">
+        {% if full_access == True %}
+            <h1 class="title">To get full access to our trading platform, <br>please fill in the form below</h1>
+        {% else %}
+            <h1 class="title">Registration: Step 2 <br> Get full access</h1>
+        {% endif %}
+        <div class="row">
+            <div class="col-12">
+                <p class="email-label mb-1">EMAIL</p>
+                <p class="email">{{ email }}</p>
+            </div>
+        </div>
+        <form method="post" class="step2-form">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ customer_form.first_name.id_for_label }}">First name</label>
+                        {{ customer_form.first_name }}
+                        {{ customer_form.first_name.errors }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ customer_form.last_name.id_for_label }}">Last name</label>
+                        {{ customer_form.last_name }}
+                        {{ customer_form.last_name.errors }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ customer_form.phone_number.id_for_label }}">Mobile Number</label>
+                        <div class="phone">
+                            {% include 'select_calling_codes.html' with name="prefix_phone_number" id="prefix_phone_number" %}
+                            {{ customer_form.phone_number }}
+                        </div>
+                        {{ customer_form.phone_number.errors }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="{{ customer_form.confirm_phone_number.id_for_label }}">Confirm Mobile Number</label>
+                        <div class="phone">
+                            {% include 'select_calling_codes.html' with name="prefix_confirm_phone_number" id="prefix_confirm_phone_number" %}
+                            {{ customer_form.confirm_phone_number }}
+                        </div>
+                        {{ customer_form.confirm_phone_number.errors }}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label for="billing_address_autocomplete">Address</label>
+                        <input type="text" id="billing_address_autocomplete" class="input form-control" placeholder="" required />
+                    </div>
+                </div>
+                {{ customer_form.address }}
+                {{ customer_form.city }}
+                {{ customer_form.state }}
+                {{ customer_form.country }}
+                {{ customer_form.zip_code }}
+                <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label for="shipping_address_autocomplete">Shipping Address</label>
+                        <input type="text" id="shipping_address_autocomplete" class="input form-control" placeholder="" required />
+                    </div>
+                </div>
+                {{ customer_form.shipping_address }}
+                {{ customer_form.shipping_city }}
+                {{ customer_form.shipping_state }}
+                {{ customer_form.shipping_country }}
+                {{ customer_form.shipping_zip_code }}
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="{{ customer_form.document_type.id_for_label }}">ID Type</label>
+                        {{ customer_form.document_type }}
+                        {{ customer_form.document_type.errors }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="{{ customer_form.document_number.id_for_label }}">ID Number</label>
+                        {{ customer_form.document_number }}
+                        {{ customer_form.document_number.errors }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="{{ customer_form.document_issuer.id_for_label }}">ID Issuer</label>
+                        {{ customer_form.document_issuer }}
+                        {{ customer_form.document_issuer.errors }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="{{ customer_form.document_expiry_date.id_for_label }}">ID Expiry date</label>
+                        {{ customer_form.document_expiry_date }}
+                        {{ customer_form.document_expiry_date.errors }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="{{ customer_form.gender.id_for_label }}">Gender</label>
+                        {{ customer_form.gender }}
+                        {{ customer_form.gender.errors }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="{{ customer_form.birth_date.id_for_label }}">Birthdate</label>
+                        {{ customer_form.birth_date }}
+                        {{ customer_form.birth_date.errors }}
+                    </div>
+                </div>
+                <div class="col-xl-6 col-12">
+                    <div class="form-group">
+                        <label for="{{ customer_form.card_number.id_for_label }}">Credit Card Number</label>
+                        {{ customer_form.card_number }}
+                        {{ customer_form.card_number.errors }}
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="{{ customer_form.card_cvc.id_for_label }}">Credit Card CVC</label>
+                        {{ customer_form.card_cvc }}
+                        {{ customer_form.card_cvc.errors }}
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="form-group">
+                        <label for="card_expiration">Credit Card Expiration</label>
+                        <input type="text" id="card_expiration" class="input form-control" name="card_expiration" maxlength="7" placeholder="-- / --" />
+                        {{ customer_form.card_expiration_month.errors }}
+                        {{ customer_form.card_expiration_year.errors }}
+                    </div>
+                </div>
+                {{ customer_form.card_expiration_month }}
+                {{ customer_form.card_expiration_year }}
+            </div>
+            <div class="checkbox">
+                <div class="form-group">
+                    {{ customer_form.trading_rules }}
+                    <label for="{{ customer_form.trading_rules.id_for_label }}">
+                        I accept Watchbot trading rules
+                    </label>
+                    {{ customer_form.trading_rules.errors }}
+                </div>
+                <div class="form-group">
+                    {{ customer_form.terms_and_privacy_policy }}
+                    <label for="{{ customer_form.terms_and_privacy_policy.id_for_label }}">
+                        I accept Watchbot general terms and conditions and privacy policy
+                    </label>
+                    {{ customer_form.terms_and_privacy_policy.errors }}
+                </div>
+            </div>
+            {{ customer_form.non_field_errors}}
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+{% block extra_body_script %}
+<script type="application/javascript">
+var autocompleteBilling, autocompleteShipping;
+
+function initAutocomplete() {
+    const countries = [
+        'it',
+        'at',
+        'be',
+        'pt',
+        'bg',
+        'es',
+        'hr',
+        'cy',
+        'cz',
+        'dk',
+        'ee',
+        'fi',
+        'fr',
+        'dd',
+        'de',
+        'gi',
+        'gr',
+        'gp',
+        'gg',
+        'hu',
+        'is',
+        'ie',
+        'im',
+        'je',
+        'lv',
+        'li',
+        'lt',
+        'lu',
+        'mt',
+        'mq',
+        'yt',
+        'mc',
+        'nl',
+        'no',
+        'pl',
+        're',
+        'ro',
+        'bl',
+        'mf',
+        'pm',
+        'sm',
+        'sk',
+        'si',
+        'se',
+        'ch',
+        'gb',
+    ];
+  autocompleteBilling = new google.maps.places.Autocomplete(
+      document.getElementById('billing_address_autocomplete'), {
+          types: ['geocode'],
+          componentRestrictions: {
+              country: countries,
+          }
+      });
+  autocompleteBilling.setFields(['address_components']);
+  autocompleteBilling.addListener('place_changed', () => fillInAddress(autocompleteBilling));
+  autocompleteShipping = new google.maps.places.Autocomplete(
+      document.getElementById('shipping_address_autocomplete'), {
+          types: ['geocode'],
+          componentRestrictions: {
+              country: countries,
+          }
+      });
+  autocompleteShipping.setFields(['address_components']);
+  autocompleteShipping.addListener('place_changed', () => fillInAddress(autocompleteShipping, 'shipping_'));
+}
+function fillInAddress(autocomplete, prefix = '') {
+    // Get the place details from the autocomplete object.
+    const place = autocomplete.getPlace();
+    let route = '';
+    let number = '';
+    for (let i = 0; i < place.address_components.length; i++) {
+        const component = place.address_components[i];
+        for (let j = 0; j < component.types.length; j++) {
+            console.log(i, j);
+            const type = component.types[j];
+            console.log(type, component);
+            switch(type) {
+                case 'street_number':
+                    number = component['short_name'];
+                    break;
+                case 'route':
+                    route = component['short_name'];
+                    break;
+                case 'locality':
+                    $('#id_'+ prefix +'city').val(component['short_name']);
+                    break;
+                case 'administrative_area_level_1':
+                    $('#id_'+ prefix +'state').val(component['short_name']);
+                    break;
+                case 'country':
+                    $('#id_'+ prefix +'country').val(component['short_name']);
+                    break;
+                case 'postal_code':
+                    $('#id_'+ prefix +'zip_code').val(component['short_name']);
+                    break;
+            }
+        }
+    }
+    if (number.length) {
+        route += ', ' + number;
+    }
+    $('#id_'+ prefix +'address').val(route);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOHawrHgQiyZKHQ4EYcwTHxcv2qYOE1Vg&libraries=places&callback=initAutocomplete"
+        async defer></script>
+{% endblock extra_body_script %}

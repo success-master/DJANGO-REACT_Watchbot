@@ -1,0 +1,41 @@
+# Database
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'watchbot',
+        'USER': 'watchbot',
+        'PASSWORD': 'watchbot',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        "OPTIONS": {'sslmode': 'disable'}
+    }
+}
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.local', 'watchbot.local']
+
+DEBUG = True
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.zoho.eu'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'watchbot@zohomail.eu'
+EMAIL_HOST_PASSWORD = 'nopassword13'
+DEFAULT_FROM_EMAIL = 'watchbot@zohomail.eu'
+ADMINS = [
+    ("Errors - HDS", "watchbot@zohomail.eu")
+]
+
+
+#### GESTPAY CONFIG ####
+GPAY_TEST_ENABLED = True
+GPAY_SHOP_LOGIN = "GESPAY78988"
+GPAY_TEST_URL = "https://sandbox.gestpay.net/gestpay/gestpayws/WSs2s.asmx?WSDL"
+GPAY_PRODUCTION_URL = "https://ecomms2s.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL"
+GPAY_APIKEY = "R0VTUEFZNzg5ODgjI0VzZXJjZW50ZSBUZXN0IGRpIENhcmVuYSMjMTgvMDMvMjAyMCAxNzoxODo1MQ=="
+GPAY_SECURE_TRANSACTION_URL = "https://ecomm.sella.it/pagam/pagam3d.aspx"
+GPAY_TEST_SECURE_TRANSACTION_URL = "https://sandbox.gestpay.net/pagam/pagam3d.aspx"
+
+GPAY_DEFAULT_CURRENCY = 242  # UicCode

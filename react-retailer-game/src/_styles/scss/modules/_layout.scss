@@ -1,0 +1,331 @@
+/*
+* PRIMARY CONTENT
+*/
+.ui.grid>.row>[class*="primary-content"].column{
+    background: $content__background-color__darker;
+    width: 100% !important;
+
+    .page-title{
+        width: 98%;
+        margin: 13px auto;
+        font-size: 13px;
+        color: $orange-color;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: center;
+
+        @media only screen and (min-width: 961px) {
+            text-align: left;
+        }
+    }
+
+    .back-to-container{
+        margin: 10px 0 20px;
+
+        .linkBack{
+            font-size: 10px;
+            color: #ffffff;
+            text-transform: none;
+            font-weight: 500;
+            line-height: normal;
+
+            &:before{
+                content: "";
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-right: 7px;
+                /*transform: rotate(-45deg) translateY(50%);*/
+                transform: rotate(-45deg);
+                border: solid #fff;
+                border-width: 1px 0 0 1px;
+            }
+
+
+            &:hover{
+                color: $link__hover__color;
+
+                &:before{
+                    border-color: $link__hover__color;
+                }
+            }
+        }
+    }
+
+    .ui.container.activities-list-container{
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+        @media only screen and (min-width: 901px) {
+            padding-right: 1rem !important;
+            padding-left: 0.5rem !important;
+        }
+    }
+
+    @media only screen and (max-width: 960px) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .ui.container.activities-list-container{
+            width: 100% !important;
+            margin: 0 auto !important;
+        }
+
+    }
+}
+
+
+
+/*
+* SIDEBAR
+*/
+.ui.grid>.row>[class*="sidebar"].column{
+    position: fixed;
+    top: 0;
+    /*top: -$header__height__mobile;*/
+    /*left: -$sidebar-left__width;*/
+    z-index: 99;
+    height: 100%;
+    min-height: 100%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    background: $body__background-color;
+    transition: left ease-out .3s;
+
+    @media only screen and (min-width: 961px) {
+        position: absolute;
+        top: 0;
+    }
+
+    &.left{
+        width: $sidebar-left__width !important;
+        flex: 0 0 $sidebar-left__width;
+        left: -$sidebar-left__width;
+
+        @media only screen and (max-width: 960px) {
+            width: $sidebar-left__width__mobile !important;
+            flex: 0 0 $sidebar-left__width__mobile;
+            left: -$sidebar-left__width__mobile;
+        }
+    }
+
+    &.right{
+        width: $sidebar-right__width !important;
+        flex: 0 0 $sidebar-right__width;
+        right: -$sidebar-right__width;
+    }
+
+
+    .buttonTri{
+        width: 100%;
+        height: $button-sidebar-menu__height;
+        padding: $button-sidebar-menu__padding;
+        border: $button-sidebar-menu__border;
+        color: $button-sidebar-menu__color;
+        background: $button-sidebar-menu__background-color;
+        text-align: $button-sidebar-menu__text-align;
+        border-radius: $button-sidebar-menu__border-radius;
+        font-size: $button-sidebar-menu__font-size;
+        font-weight: $button-sidebar-menu__font-weight;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 7px !important;
+        transition: all 0.3s ease 0s;
+        box-shadow: $button-sidebar-menu__box-shadow;
+
+        .arrowRight{
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            -webkit-transform: rotate(-45deg) translateY(50%);
+            transform: rotate(-45deg) translateY(50%);
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            padding: 2px;
+            margin-right: 6px;
+        }
+
+        &.active{
+            color: $button-sidebar-menu__active__color;
+            background: $button-sidebar-menu__active__background-color;
+            border: $button-sidebar-menu__active__border;
+            font-weight: 600 !important;
+
+            .arrowRight{
+                display: inline-block;
+            }
+        }
+
+        &:not(.active):hover {
+            color: $button-sidebar-menu__hover__color;
+            background: $button-sidebar-menu__hover__background-color;
+            border: $button-sidebar-menu__hover__border;
+        }
+    }
+
+    .userSide{
+        span{
+            display: block;
+            color: $secondary__color__darker;
+            font-size: 10px;
+            font-weight: 600;
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: lowercase;
+            line-height: 1.5;
+        }
+
+        .userName {
+            margin-bottom: 15px;
+            padding: 10px 15px 0;
+            border-top: 1px solid rgba(209, 209, 209, 0.21);
+            font-size: 20px;
+
+            @media only screen and (min-width: 961px) {
+                padding: 5px 15px 0;
+            }
+          }
+
+        .userSide-wrapper{
+            @include flex-block($_justify-content: space-between);
+            margin-bottom: 10px;
+            padding: 0 15px 5px;
+            border-bottom: 1px solid rgba(209, 209, 209, 0.21);
+        }
+
+        .userSide-wrapper .userSide-wrapper__info{
+            width: 50%;
+            padding-right: 10px;
+
+            & > div{
+                font-size: 20px;
+                letter-spacing: 0;
+            }
+
+            & > div > i{
+                font-style: normal;
+
+                & + i{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .menu-container{
+        padding: 0 0 10px 15px;
+        border-bottom: 1px solid rgba(209, 209, 209, 0.21);
+    }
+}
+
+.ui.container.mainContent{
+    display: inline-block;
+    vertical-align: top;
+    width: 100% !important;
+    height: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: $header__height__mobile;
+
+    .ui.container.mainBoard{
+        width: 100% !important;
+        height: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        & > .ui.grid {
+            height: 100%;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 961px) {
+    .ui.container.mainContent{
+        margin-top: $header__height__desktop;
+
+        .ui.container.mainBoard{
+            & > .ui.grid {
+                margin-left: 0;
+                margin-right: 0;
+
+                & >.row{
+                    flex-wrap: nowrap;
+                }
+            }
+        }
+
+    }
+
+    .ui.grid>.row>[class*="sidebar"].column{
+        position: static;
+    }
+
+    .primary-content{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+}
+
+
+/*
+* PAGE WRAPPER
+*/
+.page-wrapper{
+    margin: 0 auto;
+    //overflow: hidden;
+    height: 100%;
+
+    @media only screen and (max-width: 960px) {
+        .ui.container.mainContent{
+            position: relative;
+            left: 0;
+            transition: left ease-out .3s;
+        }
+
+        &.js-menu-opened{
+            .ui.grid>.row>[class*="sidebar"].column{
+                left: 0;
+            }
+            .ui.container.navBar{
+                left: $sidebar-left__width__mobile - 14;
+            }
+
+            .ui.container.mainContent{
+                left: $sidebar-left__width__mobile;
+            }
+        }
+    }
+}
+
+
+.ui.form .field>label,
+.ui.checkbox label, .ui.checkbox label:hover, .ui.checkbox+label,
+.ui.checkbox input:focus~label{
+    color: #fff;
+}
+
+
+/*
+*   FIXED WIDTH
+*/
+.page-wrapper{
+    @media only screen and (min-width: 961px) {
+        max-width: 1400px;
+
+        .ui.container.navBar{
+            max-width: 1400px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            left: auto;
+            right: auto;
+        }
+    }
+}
+

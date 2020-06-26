@@ -1,0 +1,104 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="login-page">
+    <section class="first-row">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-8 offset-lg-2 align-self-center">
+                    <h1 class="text-white text-center">
+                        Welcome to our Trading Platform!
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <form class="login-form" method="post">
+                        {% csrf_token %}
+                        <h4 class="title">Log in to our trading platform</h4>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="EMAIL">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="PASSWORD">
+                        </div>
+                        <a href="{% url "forgot_password" %}" class="forgot">
+                          Password Forgotten?
+                        </a>
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="text-danger mb-2">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="text-danger mb-2">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <button type="submit" class="btn btn-primary text-uppercase">ENTER</button>
+                    </form>
+                </div>
+                <div class="col-lg-4 offset-lg-1 mt-4 mt-lg-0 mt-xl-0">
+                    <h4 class="title">Don't have an account?</h4>
+                    <a href="#" class="btn btn-primary text-uppercase scroll-to-register">
+                        REGISTER NOW
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="third-row" id="register">
+        <div class="container text-center">
+            <h1 class="title text-white">
+                Find your own way of using Watchbot
+            </h1>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="{% static 'blog/images/about/king2.svg' %}" />
+                    <p class="title mt-3 text-uppercase text-white">news and updates</p>
+                    <i class="long-arrow-down text-white d-block">↓</i>
+                    <a href="{% url "registration" 1 %}" class="btn btn-outline-info text-uppercase">
+                        Register Now
+                    </a>
+                    <p class="description">Get our newsletter and all the insight news from the word of</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'blog/images/about/king.svg' %}" />
+                    <a href="/customer-game" class="d-block title mt-3 text-uppercase text-white">demo of the platform</a>
+                    <i class="long-arrow-down text-white d-block">↓</i>
+                    <a href="{% url "registration" 2 %}" class="btn btn-outline-info text-uppercase">
+                        Register Now
+                    </a>
+                    <p class="description">Get a preview of our trading platform plus the newsletter subscription</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'blog/images/about/king3.svg' %}" />
+                    <p class="title mt-3 text-uppercase text-white">full access & trading</p>
+                    <i class="long-arrow-down text-white d-block">↓</i>
+                    <a href="{% url "registration" 3 %}" class="btn btn-outline-info text-uppercase">
+                        Register Now
+                    </a>
+                    <p class="description">Get the full Watchbot experience: full analytics on the market, launching a call for a watch, monitoring your favourite timepieces</p>
+                    <p class="text-white full-access">
+                        Full access is currently available for </br><strong>EU countries and Switzerland</strong>
+                    </p>
+                </div>
+            </div>
+            <p class="mt-3 mt-lg-0 mt-xl-0">
+                <a href="/" class="more secondary text-uppercase">
+                    Learn more about Watchbot’s world
+                </a>
+            </p>
+        </div>
+    </section>
+</div>
+{% endblock content %}

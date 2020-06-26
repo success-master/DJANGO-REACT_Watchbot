@@ -1,0 +1,58 @@
+@media only screen and (min-width: 901px) {
+    .boardfullscroll {
+        height: 380px;
+        height: calc(100vh - #{$header__height__desktop} - #{$table-head__height__desktop} - #{$adv__primary-content__height} - #{$adv__primary-content__margin-top} - #{$adv__primary-content__margin-bottom});
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+         /* Firefox */
+         scrollbar-color: #e37336 grey;
+    }
+
+    .boardfullscroll::-webkit-scrollbar{
+        width: 10px;
+    }
+
+    .boardfullscroll::-webkit-scrollbar-track{
+        cursor: pointer;
+        border-radius: 5px;
+        background: grey !important;
+        box-shadow: none;
+        transition: color .2s ease;
+    }
+
+    .boardfullscroll::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background: #e37336 !important;
+    }
+
+    .boardfullscroll::-webkit-scrollbar-thumb:hover{
+        border-radius: 5px;
+        background: #e37336 !important;
+    }
+
+    .retailer__bid__container{
+        .boardfullscroll {
+            height: calc(100vh - #{$header__height__desktop} - #{$table-head__height__desktop} - #{$bid-actions-tool__height});
+        }
+
+        .boardfullscroll::-webkit-scrollbar-track{
+            cursor: pointer;
+            border-radius: 5px;
+            background: grey !important;
+            box-shadow: none;
+            transition: color .2s ease;
+        }
+    
+        .boardfullscroll::-webkit-scrollbar-thumb{
+            border-radius: 5px;
+            box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+            background: #e37336 !important;
+        }
+    
+        .boardfullscroll::-webkit-scrollbar-thumb:hover{
+            background: #e37336 !important;
+        }
+    }
+}

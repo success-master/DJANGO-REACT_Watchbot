@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'about-sections.html' with is_authenticated=is_authenticated %}
+{% endblock content %}

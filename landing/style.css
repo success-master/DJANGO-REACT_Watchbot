@@ -1,0 +1,66 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-image: url("coming.soon.jpg");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.modal{
+    width: auto;
+    max-width: 528px;
+    height: auto;
+    min-height: 200px;
+    background-color: #000000;
+    position: relative;
+    margin: 100px auto 0 auto;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0,0,0,1);
+    -moz-box-shadow: 0 0 40px rgba(0,0,0,1);
+    -webkit-box-shadow: 0 0 40px rgba(0,0,0,1);
+    -o-box-shadow: 0 0 40px rgba(0,0,0,1);
+}
+
+.logo, .footer{
+    text-align: center;
+}
+.content{
+    background-color: #212121!important;
+    text-align: center;
+}
+.coming{
+    padding-top: 30px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.coming2{
+    color: #fff;
+    font-weight: 100;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.coming3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 30px 75px;
+    line-height:19px;
+}
+.footer a{
+    font-weight: bold;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none!important;
+}
+
+.footer .fa{
+    color: #665b3b!important;
+    padding: 15px 5px;
+    font-size: 18px;
+}

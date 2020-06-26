@@ -1,0 +1,193 @@
+$border-color: #2b3339;
+
+
+.ui.modal.reference-info__modal-container{
+    background: $body__background-color;
+
+    & > .header, 
+    & > .actions, 
+    & > .content{
+        background: transparent;
+        border: 0 none;
+    }
+
+    & > .content{
+        padding: 1.5rem;
+    }
+
+    & > .actions{
+        padding-top: 0;
+    }
+
+    .col-left,
+    .col-right{
+        .head-wrapper{
+            margin-bottom: 5px;
+
+            @media only screen and (min-width: 768px){
+                 min-height: 110px;
+            }
+        }
+    }
+
+    .col-left.col-watch-details{
+        position: relative;
+
+        .head-wrapper{
+            h4{
+                color: #f68b1f; 
+            }
+        }
+
+        ul{
+
+            li{
+                border-top: 1px solid $border-color;
+            }
+        }
+
+        .image-container{
+            padding-bottom: 55px;
+
+            .image-wrapper{
+                border: 1px solid $border-color;
+                background-color: $body__background-color;
+            }
+        }
+
+        .btn-wrapper{
+            @media only screen and (min-width: 426px){
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+            .add-to-watchlist{
+                position: relative;
+                padding-left: 30px;
+                
+                span{
+                    position: absolute;
+                    left: 8px;
+                    top: 8px;
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .col-analytics{
+        max-width: none;
+        @media only screen and (min-width: 768px){
+            padding-left: 15px;
+        }
+
+        @media only screen and (min-width: 426px){
+            position: relative;
+            padding-bottom: 55px;
+        }
+
+        .head-wrapper{
+            h4.price{
+                color: #f04a98;
+            }
+        }
+
+        .reference-chart__container{
+            background: transparent;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            padding: 10px 0 15px;
+            margin: 0;
+            flex-direction: column;
+
+            .reference-chart__timeline{
+                width: 100%;
+                padding-right: 0;
+
+                ul{
+                    max-width: 100%;
+                    margin: 0 auto 20px;
+                    padding-left: 36px;
+                    /*padding-left: 25px;*/
+                    padding-right: 14px;
+                    @include flex-block();
+
+                    li{
+                        flex: 0 0 25%;
+                        padding: 0;
+                    }
+
+                    button{
+                        width: 100%;
+                        border-bottom: 1px solid #2c343a;
+
+                        &.active{
+                            border-bottom: 2px solid #f68b1f;
+                        }
+                    }
+                }
+            }
+
+            .reference-chart__prices-wrapper{
+                width: 100%;
+                padding-left: 0;
+                padding-top: 20px;
+
+                ul{
+                    max-width: 100%;
+                    margin: 0 auto;
+                    padding-left: 37px;
+                    padding-right: 10px;
+                    border-top: 1px solid $border-color;
+                    @include flex-block();
+
+                    @media only screen and (max-width: 900px){
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
+                    li{
+                        flex: 0 0 33%;
+                        text-align: center;
+                        padding: 10px 7px 0;
+
+                        &:last-child{
+                            padding-right: 0;
+                        }
+                        &:first-child{
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .reference-chart__wrapper{
+                .VictoryContainer{
+                    /*width: calc(100% + 20px) !important;
+                    margin-left: 15px;*/
+                }
+            }
+        }
+
+        @media only screen and (max-width: 767px){
+            .content-wrapper{
+                margin-bottom: 10px;
+            }
+        }
+        
+
+        @media only screen and (min-width: 426px){
+            .actions{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+
+                button{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

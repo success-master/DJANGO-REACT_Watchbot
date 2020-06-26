@@ -1,0 +1,74 @@
+{% extends "index_old.html" %}
+{% load static %}
+
+{% block content %}
+<section class="first_row article">
+    <div class="row">
+        <div class="col-12 col-sm-8 item">
+            <div class="title_box">
+                <div class="category_date"><span class="category">NEWS - </span> 03 January 2018</div>
+                <div class="title">Leica Puts Fancy Watches in Focus for $12,000 and Up</div>
+                <div class="author"><strong>Watchbot</strong> 4 days ago - 2658 views</div>
+            </div>
+            <div class="img_container">
+                <img src="{% static "blog/images/article.jpg" %}">
+            </div>
+            <div class="text">
+                Leica, famous for sturdy analog cameras that are distinctly anachronistic in today’s digital age, is trying its hand at an equally retro product: high-end mechanical watches.<br />
+                The made-in-Germany timepieces will give Swiss watches a run for their money with their price tags, at least they start at 9,900 euros ($12,000). <span style="font-weight: bold; color: #ff6600;">Leica Camera AG</span> is working with Lehmann Prazision GmbH, a precision-manufacturing company, and many of the components come from Germany’s Black Forest region, renowned for its cuckoo-clock industry.<br />
+                <br />
+                Leica has been adapting to the decline of its traditional market by selling lenses for digital cameras and smartphones, as well as adding high-end digital versions of its iconic rangefinders. The watches were developed at the Ernst Leitz Werkstatten, a workshop for new products that’s named after the brand’s foundter.<br />
+                Two models will be available around the end of this year, with higher-end options including rose gold, Leica said in a statement. A limited edition with a red watch face, recalling the Leica logo, is also planned.<br />
+                <br />
+                Leica isn’t the only German brand to try to relaunch itself as a watchmaker. Two decades ago, luxury penmaker Montblanc added a line of timepieces. Now that label is one of Swiss luxury-goods maker Richemont’s top watch brands.<br />
+                <br />
+                The camera company has dabbled in watches from time to time, including a limited-edition Leica-labeled timepiece from Swiss brand Valbray in 2014.
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 second_row">
+            <h3 class="section_keep d-none d-sm-block">
+                <span>Keep in touch</span>
+            </h3>
+            <form method="post" class=" d-none d-sm-block">
+                <div class="input-group with-btn">
+                  <input type="email" class="form-control" name="email" placeholder="Your e-mail">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        Sign Up
+                    </button>
+                  </span>
+                </div>
+                <div class="input-group newsletter_agreement">
+                    <label for="newsletter_agreement">
+                        <input type="checkbox" id="newsletter_agreement">
+                        I have read and accept the <a href="#"><strong>Privacy Policy</strong></a>
+                    </label>
+                </div>
+            </form>
+            <div class="tutorial">
+                <div class="title">How Watchbot works</div>
+                <div class="subtitle">Video below explain the use of Watchbot</div>
+                <div class="video_preview">
+                    <img src="{% static "blog/images/tutorial_preview.jpg" %}">
+                    <div class="play"></div>
+                </div>
+            </div>
+            <div class="title  d-none d-sm-block">Trending</div>
+            <ul class="nav flex-column d-none d-sm-block">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Leica Puts Fancy Watched in Focus for $12,000 and Up</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Roger Dubuis From bedouin to boardroom</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Russia Puts Browder on Interpol Wanted List, Blocking Travel</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Americans Are Retiring Later, Dying Sooner and Sicker In-Between</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">NFL’s $205 Million Man Is Hated by Everyone But Those Who Matter</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Patek Philippe Just Opened a Mind-Blowing Museum</a></li>
+            </ul>
+            <div class="advertising">
+                <div class="title">Advertising</div>
+                <img src="{% static "blog/images/adv.jpg" %}">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

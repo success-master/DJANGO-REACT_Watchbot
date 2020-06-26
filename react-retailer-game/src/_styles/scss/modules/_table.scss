@@ -1,0 +1,751 @@
+/*
+* TABELLA DATI
+*/
+
+/* table head */
+.table-head{
+    // display: none !important;
+    width: 98%;
+    margin: 0 auto !important;
+    height: $table-head__height__desktop;
+    border-bottom: 1px solid $table__border-color;
+    font-size: 10px;
+    color: #cdd7da;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    align-items: center !important;
+
+    @media only screen and (min-width: 901px) {
+        display: flex !important;
+        @include flex-block($_align-items: center);
+
+        .column:first-child{
+            padding-left: 0 !important;
+        }
+
+        .column:last-child{
+            padding-right: 0 !important;
+        }
+    }
+  }
+
+
+  /* table body */
+  .ui.grid.table-body{
+    width: 100%;
+    letter-spacing: 0.04em;
+    font-size: 10px;
+    font-weight: 500;
+    color: $secondary__color__lighter;
+    line-height: 1.1;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    @media only screen and (min-width: 768px) {
+        width: 98%;
+    }
+
+    .panelRow{
+        height: auto;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        border-bottom: 1px solid $table__border-color;
+        align-items: flex-start !important;
+
+        &:first-child{
+            border-top: 1px solid $table__border-color;
+        }
+
+        &.active-pointer{
+            cursor: pointer;
+        }
+
+        .label__mobile,
+        .td__label,
+        .highlighted-text{
+            display: block;
+            font-size: 10px;
+            color: $table__color__emphasis;
+            font-family: $font-family__base;
+            font-weight: 400;
+            white-space: normal;
+            letter-spacing: normal;
+            /*text-align: right;*/
+            padding-top: 3px;
+        }
+
+        @media only screen and (min-width: 901px) {
+            /*height: 48px;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;*/
+
+            .label__mobile{
+                display: none;
+            }
+        }
+
+        & > .column{
+            @include flex-block(
+                $_direction: column,
+                $_justify-content: space-between
+            );
+
+            @media only screen and (min-width: 901px) {
+                &:first-child{
+                    padding-left: 3px !important;
+                }
+
+                &:last-child{
+                    padding-right: 0 !important;
+                }
+            }
+
+            & > div{
+                padding: 3px 0;
+            }
+        }
+    }
+
+    .trade-id-wrapper{
+        /*color: $table__color__emphasis;
+        font-family: 'IBM Plex Mono', monospace;*/
+    }
+
+    .sku-wrapper{
+        color: $table__color__emphasis;
+    }
+
+    .col-price{
+        font-family: 'IBM Plex Mono', monospace;
+        white-space: nowrap;
+    }
+
+    & > .row >[class*="col-actions"].column{
+            align-items: center !important;
+            align-self: center;
+
+            .button{
+                @include button-panel();
+                margin: 0;
+            }
+    }
+  }
+
+
+
+  @media only screen and (min-width: 768px) {
+    .ui.grid.table-body{
+
+        .panelRow{
+            & > .column.col-empty{
+              flex-shrink: 0;
+              display: none;
+            }
+
+            & > .column.col-actions{
+                button{
+                   align-self: flex-end; 
+                }
+            }
+        }
+
+        &.live-puts{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 17% !important;
+                }
+                
+                & > .column.col-description{
+                    width: 25% !important;
+                }
+
+                & > .column.col-price{
+                    width: 19% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 22% !important;
+                }
+
+                & > .column.col-actions{
+                    width: 17% !important;
+                }
+            }
+
+            &.bayer{
+                .panelRow{
+                    & > .column.col-trade-id{
+                        width: 13% !important;
+                    }
+                    
+                    & > .column.col-description{
+                        width: 22% !important;
+                    }
+    
+                    & > .column.col-price{
+                        width: 15% !important;
+                    }
+    
+                    & > .column.col-country{
+                        width: 19% !important;
+                    }
+                    
+                    & > .column.col-date{
+                        width: 18% !important;
+                    }
+    
+                    & > .column.col-actions{
+                        width: 13% !important;
+                    }
+                }
+            }
+        }
+
+
+        &.live-calls,
+        &.my-live-calls{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 13% !important;
+                }
+                
+                & > .column.col-description{
+                    width: 22% !important;
+                }
+
+                & > .column.col-price{
+                    width: 15% !important;
+                }
+
+                & > .column.col-country{
+                    width: 19% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 18% !important;
+                }
+
+                & > .column.col-actions{
+                    width: 13% !important;
+                }
+            }
+
+            &.bayer{
+                .panelRow{
+                    & > .column.col-trade-id{
+                        width: 13% !important;
+                    }
+                    
+                    & > .column.col-description{
+                        width: 23% !important;
+                    }
+
+                    & > .column.col-price{
+                        width: 15.5% !important;
+                    }
+
+                    & > .column.col-date{
+                        width: 19% !important;
+                    }
+
+                    & > .column.col-actions{
+                        width: 14% !important;
+                    }
+                }   
+            }
+        }
+
+
+        &.failed-trades,
+        &.competitors-put{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 13% !important;
+                }
+                
+                & > .column.col-description{
+                    width: 26% !important;
+                }
+
+                & > .column.col-price{
+                    width: 19% !important;
+                }
+
+                & > .column.col-status{
+                    width: 21% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 21% !important;
+                }
+            }
+        }
+
+
+        &.joined-live-calls{ /* retailer */
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 13% !important;
+                }
+                
+                & > .column.col-description{
+                    width: 22% !important;
+                }
+
+                & > .column.col-price{
+                    width: 14.5% !important;
+                }
+
+                & > .column.col-country{
+                    width: 18% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 18% !important;
+                }
+            }
+        }
+
+
+        &.matched-trades{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 5% !important;
+                }
+                
+                & > .column.col-description{
+                    width: 22% !important;
+                }
+
+                & > .column.col-price{
+                    width: 15% !important;
+                }
+
+                & > .column.col-country{
+                    width: 16% !important;
+                }
+
+                & > .column.col-status{
+                    width: 16% !important;
+                }
+
+                & > .column.col-countdown{
+                    width: 11% !important;
+                }
+            }
+        }
+
+
+        &.joined-live-puts{/* buyer */
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 13% !important;
+                }
+                
+                & > .column.col-description{
+                    width: 22% !important;
+                }
+
+                & > .column.col-price{
+                    width: 14.5% !important;
+                }
+
+                & > .column.col-country{
+                    width: 18% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 18% !important;
+                }
+
+                & > .column.col-actions{
+                    width: 13% !important;
+                }
+
+                & > .column.col-status{
+                    width: 18% !important;
+                }
+            }
+        }
+
+        &.watchlist-table{
+            .panelRow{
+                & > .column.col-actions{
+                    width: 15% !important;
+
+                    &.remove{
+                        width: 11% !important;
+
+                        button{
+                            align-self: flex-start;
+                        }
+                    }
+
+                    &.show-analytics{
+                        width: 17% !important;
+                    }
+                }
+                
+                & > .column.col-description{
+                    width: 22% !important;
+                }
+
+                & > .column.col-price{
+                    width: 17% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 17% !important;
+                }
+            }
+        }
+
+        
+        &.matched-trades,
+        &.failed-trades,
+        &.competitors-put,
+        &.joined-live-puts,
+        &.joined-live-calls{
+            .panelRow{
+                & > .column.col-actions{
+                    flex-shrink: 0;
+                    display: none;
+                }
+            }
+        }
+
+        &.watchlist__tab{
+            @media only screen and (min-width: 481px){
+                width: 100% !important;
+                padding-left: 22px !important;
+                padding-right: 22px !important;
+            }
+        }
+    }
+  }
+
+
+
+  @media only screen and (max-width: 767px) {
+    .ui.grid.table-body{
+
+        .panelRow{
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+
+            & > .column.col-empty{
+              flex-shrink: 0;
+              display: none;
+            }
+
+            & > .column.col-description{
+                & > .modal-name-wrapper{
+                    font-size: 12px;
+
+                    &.truncate-text{
+                        height: 44px;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        &.live-puts{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 25% !important;
+                    order: 1;
+                }
+                
+                & > .column.col-description{
+                    width: 45% !important;
+                    order: 2;
+                }
+
+                & > .column.col-price{
+                    width: 30% !important;
+                    text-align: right;
+                    order: 3;
+                }
+
+                & > .column.col-country{
+                    width: 20% !important;
+                    padding-top: 10px;
+                    order: 4;
+                }
+                
+                & > .column.col-date{
+                    width: 50% !important;
+                    padding-top: 10px;
+                    order: 5;
+                }
+
+                & > .column.col-actions{
+                    display: block;
+                    width: 50% !important;
+                    padding-top: 10px;
+                    order: 6;
+                    text-align: right;
+                }
+            }
+
+            &.bayer{
+                .panelRow{
+                    & > .column.col-country{
+                        width: 25% !important;
+                    }
+                    
+                    & > .column.col-date{
+                        width: 45% !important;
+                    }
+
+                    & > .column.col-actions{
+                        width: 30% !important;
+                    }
+                }
+            }
+        }
+
+
+
+        &.live-calls,
+        &.my-live-calls{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 20% !important;
+                    order: 1;
+                }
+                
+                & > .column.col-description{
+                    width: 50% !important;
+                    order: 2;
+                }
+
+                & > .column.col-price{
+                    width: 30% !important;
+                    text-align: right;
+                    order: 3;
+                }
+
+                & > .column.col-country{
+                    width: 20% !important;
+                    padding-top: 10px;
+                    order: 4;
+                }
+                
+                & > .column.col-date{
+                    width: 50% !important;
+                    padding-top: 10px;
+                    order: 5;
+                }
+
+                & > .column.col-actions{
+                    display: block;
+                    width: 30% !important;
+                    padding-top: 10px;
+                    order: 6;
+                    text-align: right;
+                }
+            }
+
+            &.bayer{
+                .panelRow{
+                    & > .column.col-trade-id{
+                        width: 16% !important;
+                    }
+                    
+                    & > .column.col-description{
+                        width: 36% !important;
+                    }
+
+                    & > .column.col-price{
+                        width: 24% !important;
+                    }
+
+                    & > .column.col-date{
+                        width: 52% !important;
+                    }
+
+                    & > .column.col-actions{
+                        width: 48% !important;
+                    }
+                }   
+            }
+        }
+
+
+        &.failed-trades,
+        &.competitors-put{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 25% !important;
+                    //order: 1;
+                }
+                
+                & > .column.col-description{
+                    width: 45% !important;
+                    //order: 2;
+                }
+
+                & > .column.col-price{
+                    width: 30% !important;
+                    text-align: right;
+                    //order: 3;
+                }
+
+                & > .column.col-country{
+                    width: 20% !important;
+                    padding-top: 10px;
+                    //order: 4;
+                }
+
+                & > .column.col-status{
+                    display: block;
+                    width: 50% !important;
+                    padding-top: 10px;
+                    //order: 6;
+                }
+                
+                & > .column.col-date{
+                    width: 50% !important;
+                    padding-top: 10px;
+                    //order: 5;
+                    text-align: right;
+                }
+            }
+        }
+
+
+        &.joined-live-puts,
+        &.joined-live-calls,
+        &.matched-trades{
+            .panelRow{
+                & > .column.col-trade-id{
+                    width: 16% !important;
+                    order: 1;
+                }
+                
+                & > .column.col-description{
+                    width: 36% !important;
+                    order: 2;
+                }
+
+                & > .column.col-price{
+                    width: 24% !important;
+                    text-align: right;
+                    order: 3;
+                }
+
+                & > .column.col-country{
+                    width: 16% !important;
+                    padding-top: 10px;
+                    order: 5;
+                }
+
+                & > .column.col-status{
+                    width: 36% !important;
+                    margin-right: auto;
+                    padding-top: 10px;
+                    order: 6;
+                }
+
+                & > .column.col-countdown{
+                    width: 48% !important;
+                    padding-top: 10px;
+                    text-align: right;
+                    order: 7;
+                }
+            }
+        }
+
+        &.matched-trades{
+            .panelRow{
+                & > .column.col-actions{
+                    flex-shrink: 0;
+                    display: none;
+                }
+            }
+        }
+        
+        &.joined-live-puts,
+        &.joined-live-calls{
+            .panelRow{
+                & > .column.col-country{
+                    width: 50% !important;
+                }
+                
+                & > .column.col-date{
+                    width: 50% !important; 
+                    order: 6;
+                    text-align: right;
+                    padding-top: 10px;
+                }
+
+                & > .column.col-actions{
+                    flex-shrink: 0;
+                    display: none;
+                }
+            }
+        }
+    }
+  }
+
+  //@media only screen and (max-width: 900px) {
+  //  .ui.grid.table-body > .row{
+  //      .label__mobile,
+  //      .td__label{
+  //          display: block;
+  //          color: $table__color__emphasis;
+  //          font-size: 9px;
+  //          font-family: $font-family__base;
+  //          padding-top: 3px;
+  //      }
+  //
+  //      //.col-trade-id{
+  //      & >[class*="col-trade-id"].column{
+  //          width: 25% !important;
+  //          flex: 0 0 25%;
+  //          padding-bottom: 15px;
+  //      }
+  //
+  //      & >[class*="col-description"].column{
+  //      //.col-description{
+  //          width: 50% !important;
+  //          flex: 0 0 50%;
+  //          padding-bottom: 15px;
+  //      }
+  //
+  //      & >[class*="col-price"].column{
+  //      //.col-price{
+  //          width: 25% !important;
+  //          flex: 0 0 25%;
+  //          padding-bottom: 15px;
+  //          text-align: right;
+  //      }
+  //
+  //      & >[class*="col-date"].column{
+  //      //.col-date{
+  //          width: 25% !important;
+  //          flex: 0 0 25%;
+  //      }
+  //
+  //      & >[class*="col-time"].column{
+  //      //.col-time{
+  //          width: 50% !important;
+  //          flex: 0 0 50%;
+  //      }
+  //
+  //      & >[class*="col-actions"].column{
+  //      //.col-actions{
+  //          width: 25% !important;
+  //          flex: 0 0 25%;
+  //          text-align: right !important;
+  //          align-items: flex-end !important;
+  //
+  //          .button{
+  //              display: inline-block !important;
+  //          }
+  //      }
+   // }
+  //}

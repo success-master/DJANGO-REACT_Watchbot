@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+{% load static %}
+{% load tz %}
+
+{% block content %}
+{% if is_authenticated != True %}
+    {% include 'about-sections.html' with is_authenticated=is_authenticated home=True %}
+{% endif %}
+<div class="home-page">
+    <section class="news px-3">
+        <div class="container py-3">
+            <div class="lines"></div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="mt-3 mb-0">News from the Watch World</h1>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dates">
+                        <p class="today m-0 text-uppercase">{% now "l F d, Y" %}</p>
+                        <p class="time-zone m-0">
+                            {% timezone "Europe/Rome" %}
+                                GENEVE {% now "H:i" %}
+                            {% endtimezone %}
+                            {% timezone "Asia/Hong_Kong" %}
+                                HONK HONG {% now "H:i" %}
+                            {% endtimezone %}
+                            {% timezone "America/New_York" %}
+                                NEW YORK {% now "H:i" %}
+                            {% endtimezone %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="articles">
+                <div class="row" id="more-news">
+                    {% for article in news.articles %}
+                        <div class="col-lg-4 article mb-3 {% if forloop.counter > 3 %} d-none {% endif %}">
+                            {% include 'preview-article.html' with article=article typeArticle='primary' showCategory=True %}
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if news.articles.count > 3 %}
+                    <div class="text-center">
+                        <a href="#" class="more text-uppercase" data-target="more-news">
+                            + Load more news
+                        </a>
+                        <a href="#" class="less text-uppercase d-none" data-target="more-news">
+                            - Show less
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <div class="banner">
+        <div class="link"></div>
+    </div>
+    {% for category in categories %}
+        {% include 'category-preview-articles.html' with category=category is_authenticated=is_authenticated %}
+    {% endfor %}
+
+</div>
+{% endblock content %}

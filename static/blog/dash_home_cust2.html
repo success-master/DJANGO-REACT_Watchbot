@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>WatchBot</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+  <![endif]-->
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+
+				
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<style>
+.columns { padding: 0;}
+.boardfull {
+    height: 55vh;
+    background: url(images/bg-tabella-watch.jpg) repeat-x 0 50%;
+    background-size: cover;
+    color: #fff;
+}
+.boardwin {
+    display: inline;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: rgba(37,142,178,0.8);
+    color: #fff;
+    position: relative;
+    top: -12px;
+    padding-left: 5px;
+    left: -5px;
+}
+.boardrow {
+    border-top: solid 1px rgba(255,255,255,0.3);
+}
+
+.board_line_view {
+    color: #fff;
+    font-weight: bold;
+
+}
+.modal-content {
+
+    width: 640px;
+   
+}
+</style>
+</head>
+
+<body> 
+    <div class="dizzy-container">
+        <div class="dizzy-gillespie"></div>
+    </div>
+    
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+    <span class="close">&times;</span>
+    <h2>RISULTATI DELLA RICERCA</h2>
+  </div>
+  <div class="modal-body">
+    <h5>BRAND: A. Lange & Sohne</h5>
+    
+    <div class="refline">
+        <b>Reference:</b>
+        720.032
+        
+        <div class="refvisualizza">
+            <a href="dash_ref_cust.html">Visualizza</a>
+        </div>
+    </div>
+    <div class="refline">
+        <b>Reference:</b>
+        720.032
+        
+        <div class="refvisualizza">
+            <a href="dash_ref_cust.html">Visualizza</a>
+        </div>
+    </div>
+    <div class="refline">
+        <b>Reference:</b>
+        720.032
+        
+        <div class="refvisualizza">
+            <a href="dash_ref_cust.html">Visualizza</a>
+        </div>
+    </div>
+    <div class="refline">
+        <b>Reference:</b>
+        720.032
+        
+        <div class="refvisualizza">
+            <a href="dash_ref_cust.html">Visualizza</a>
+        </div>
+    </div>
+    <div class="refline">
+        <b>Reference:</b>
+        720.032
+        
+        <div class="refvisualizza">
+            <a href="dash_ref_cust.html">Visualizza</a>
+        </div>
+    </div>
+    
+  </div>
+  
+        </div>
+    </div>
+  
+	<div class="row">
+		<div class="one columns">
+		    <a href="index.html">
+		        <img id="logo" src="images/logol.png" align="left"/>
+		    </a>
+		</div>
+		
+		<div class="eleven columns">
+            <div class="row yline">
+		
+                <div class="six columns">
+                    <ul class="nav-bar">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Reports</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>			
+                </div>
+        
+                <div class="four columns text-right" style="padding: 0;">
+		    
+                    <div class="logh">
+                    
+                    <div class="hamburger-slim"></div>
+                    <div class="logh_divider"></div>
+                    <div class="logh_lang">
+                        <span class="currency">ENG</span>
+                    
+                        <img src="images/arrow_down.png" align="right"/>	
+                    </div>	
+                    <div class="logh_divider"></div>
+                    <div class="logh_curr">
+                        <span class="currency">USD</span>
+                    
+                        <img src="images/arrow_down.png" align="right"/>	
+                    </div>	
+                    <div class="logh_divider"></div>
+                    <div class="logh_contact">
+                        @	
+                    </div>
+                    <div class="logh_divider"></div>
+                    <div class="logh_alert">
+                        <div class="alerttooltip">
+                            <a href="#" id="alertshow">
+                                <img src="images/dashboard-hl2_03.png" width="25" align="right"/>
+                            </a>
+                            <div class="alert_box">
+                                <div class="popup_mark">
+                                    <img src="images/popup_mark.png"/>
+                                </div>                        
+                                <div class="popup_descr">
+                                    <img src="images/popup_descr.png"/>
+                                </div> 
+                                <div class="popup_icone">
+                                    <div class="popup_detclo">
+                                        <div style="float: right;">
+                                            <a href="#" id="pclo" class="hovpuls">
+                                                <img src="images/popup_close.png"> 
+                                                <div class="golden_text text-center">
+                                                   Close
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div style="float: right;">
+                                            <a href="orologio.html" id="pdet" class="hovpuls">
+                                                <img src="images/popup_details.png"> 
+                                                <div class="golden_text text-center">
+                                                   Details
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="popup_decacc">
+                                        <div style="float: right;">
+                                            <a href="orologio.html" id="pacc" class="hovpuls">
+                                                <img src="images/orologio_accept.png"> 
+                                                <div class="golden_text text-center">
+                                                   Accept
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div style="float: right;">
+                                            <a href="#" id="pdec" class="hovpuls">
+                                                <img src="images/orologio_decline.png"> 
+                                                <div class="golden_text text-center">
+                                                   Decline
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="logh_divider"></div>
+                    <div class="logh_user">
+                        <img src="images/dashboard-hl2_05.png" align="right"/>	
+                    </div>
+                </div>	
+		        </div>
+		        
+		    </div>
+		</div>
+	</div>
+	
+	<!--
+	<div class="row">
+	    <div class="nine columns">
+	    </div>
+	    <div class="three columns text-right">
+	        <a href="orologio.html">
+	            <img src="images/dash_search.png" style="float: right"> 
+	        </a>
+	        <span class="golden_text" style="float: right">
+	            
+                
+                <input placeholder="New Request/Proposal" type="text" id="reqpropos"></input>
+               
+	            
+	        </span>
+	    
+	    </div>
+	</div>
+	-->
+	
+	<div class="margine"></div>
+	
+	<div class="row">
+		<div class="twelve columns">
+			<div class="row">
+			    <div class="three columns">
+					
+					<!--
+					
+					<div id="toggle">
+					    <h3 class="textc">FAST ACTION</h3>
+					    <hr class="blackieslim">
+					    <button class="ybut">Request<br />CALL</button>
+  				        <button class="wbut">Proposal<br/>PUT</button>
+  				        
+  				        <form class="loginbox" autocomplete="off">
+                            <input placeholder="Brand *" type="text" id="brand"></input>
+                            <input placeholder="Model *" type="text" id="model"></input>
+                            <textarea placeholder="Description *" rows="4" name="description"></textarea>
+                            
+                            <input placeholder="Movement *" type="text" id="movement"></input>
+                            <input placeholder="Case material *" type="text" id="case_material"></input>
+                            <input placeholder="Bracelet material *" type="text" id="bracelet_material"></input>
+                            <input placeholder="Location" type="text" id="location"></input>
+                            
+                            <button class="ubut wselect" style="width: 50%; display: block; float: none;">Upload photo</button>
+                            
+                            <div class="daprice">
+                                <label for="Price">Price</label>
+                                <input placeholder="Price" type="checkbox" id="price"></input>
+                            </div>
+                            <div class="datime">
+                                <label for="time">time</label>
+                                <input placeholder="Time" type="checkbox" id="time"></input>
+                            </div>
+                            
+                            <button id="submit_rp" class="wselect" style="width: 50%; display: inline-block; float: right; margin-top: 12px;">Submit</button>
+                        </form>
+  				        
+					
+					
+					
+					
+					</div>
+					<div id="handle">
+					    <img src="images/board_close.png" />	
+					</div>
+					
+					-->
+					
+					 <div class="boardharow rowgradblue text-left">
+					                <a href="#">Search reference</a><img src="images/icon-search.png">
+					                
+					                <a href="#" id="myRefBtn">Add watch <img src="images/icon-add-watch.png" style="cursor: pointer;"></a>
+					            </div>
+					
+					
+				</div>
+				
+				<div class="two columns text-center">
+				    <div class="boardharow boardhrowtitle">
+					                Your Activities
+					            </div>
+				    
+					     
+				</div>
+				
+                
+				<div class="seven columns">
+					            <div class="boardharow rowgradblue text-left">
+					                <a href="#" class="m0">View All</a> |
+					                <a href="#" class="m1">Aste aperte</a> | 
+					                <a href="#" class="m2">Aste chiuse</a> | 
+					                <a href="#" class="m4">Aste annullate</a> |
+					                <a href="#" class="lasta m5">Aste decadute</a>
+					            </div>
+					            
+					          
+					        
+					    </div>
+			</div>
+							
+		</div>
+		
+				
+				
+	</div>
+	
+	<div class="rowblue">
+	
+	<div class="row  rowblue boardmain">
+		<div class="twelve columns">
+			<div class="row">
+			    <div class="three columns">
+					
+					<!--
+					
+					<div id="toggle">
+					    <h3 class="textc">FAST ACTION</h3>
+					    <hr class="blackieslim">
+					    <button class="ybut">Request<br />CALL</button>
+  				        <button class="wbut">Proposal<br/>PUT</button>
+  				        
+  				        <form class="loginbox" autocomplete="off">
+                            <input placeholder="Brand *" type="text" id="brand"></input>
+                            <input placeholder="Model *" type="text" id="model"></input>
+                            <textarea placeholder="Description *" rows="4" name="description"></textarea>
+                            
+                            <input placeholder="Movement *" type="text" id="movement"></input>
+                            <input placeholder="Case material *" type="text" id="case_material"></input>
+                            <input placeholder="Bracelet material *" type="text" id="bracelet_material"></input>
+                            <input placeholder="Location" type="text" id="location"></input>
+                            
+                            <button class="ubut wselect" style="width: 50%; display: block; float: none;">Upload photo</button>
+                            
+                            <div class="daprice">
+                                <label for="Price">Price</label>
+                                <input placeholder="Price" type="checkbox" id="price"></input>
+                            </div>
+                            <div class="datime">
+                                <label for="time">time</label>
+                                <input placeholder="Time" type="checkbox" id="time"></input>
+                            </div>
+                            
+                            <button id="submit_rp" class="wselect" style="width: 50%; display: inline-block; float: right; margin-top: 12px;">Submit</button>
+                        </form>
+  				        
+					
+					
+					
+					
+					</div>
+					<div id="handle">
+					    <img src="images/board_close.png" />	
+					</div>
+					
+					-->
+					
+				    <div class="boardle" id="boardlescroll">
+					<a href="dash_ref_cust.html"><img src="images/nuovografico.png" class="grafico2" /></a>
+<a href="dash_ref_cust.html"><img src="images/nuovografico.png" class="grafico2" /></a>
+<a href="dash_ref_cust.html"><img src="images/nuovografico.png" class="grafico2" /></a>
+					</div>
+				</div>
+				
+				<div class="two columns text-center actcent">
+				   
+				            <div class="margine"></div> 
+					        <button class="mbut2 m1">Last Updates</button>
+					        <button class="mbut2 m2">Your Request CALL</button>
+					        <button class="mbut2 m3">Your Follow</button>
+					        <button class="mbut2 ">Your Alert</button>
+					<div class="margine"></div>     
+					<img src="images/orologio-adv.png" />
+				</div>
+				
+                
+				<div class="seven columns">
+					            
+					            
+					            <div class="boardfull" id="boardfullscroll">
+					            
+                                    <div class="boardrow ico1">
+                                
+                                        <div class="board_ico">
+                                            <img src="images/icoc_1_ap.png">
+                                        </div>
+                                
+                                        <div class="board_descr">
+                                            Asta aperta 
+                                        </div>
+                                        
+                                        <div class="board_pricall">
+                                            1st Call Expires in: 00:04:25
+                                        </div>
+                                
+                                        <div class="board_time">
+                                            2 min
+                                        </div>
+                            
+                                        <div class="board_line_viewpa">
+                                            Partecipa
+                                        </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico1">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_1_ap.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta aperta
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                           1st Call Expires in: 00:04:25
+                                        </div>
+                            
+                                    <div class="board_time">
+                                        30 min
+                                    </div>
+                            
+                                    <div class="board_line_viewpa">
+                                        Partecipa
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico2">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_2_ch.png">
+                                    </div>
+                                
+                                    <div class="boardchiu">
+                                
+                                    <div class="board_descr">
+                                        Asta Chiusa 
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            Price € 125.000,00 ($ 128,000,00)
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        1h
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        
+                                    </div>
+                                    
+                                    </div>
+                                    
+                                    </div>
+                            
+                                    <div class="boardrow ico3">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_3_vin.png">
+                                    </div>
+                                    
+                                    <div class="boardwin">
+                                    
+                                    <div class="board_descr">
+                                        Asta vinta
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            2nd Call 
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        1g
+                                    </div>
+                            
+                                    <div class="board_line_viewpay">
+                                        Pay
+                                    </div>
+                                    
+                                    </div>
+                                    
+                                    </div>
+                            
+                                    <div class="boardrow ico5">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_5_dec.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta decaduta
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                           
+                                        </div>
+                                        
+                                    <div class="board_time">
+                                        5g
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico4">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_4_ann.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta annullata
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                           
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        1m
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        Visualizza
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico2">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_2_ch.png">
+                                    </div>
+                                
+                                    <div class="boardchiu">
+                                
+                                    <div class="board_descr">
+                                        Asta chiusa 
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            Price € 125.000,00 ($ 128,000,00)
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        2m
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        
+                                    </div></div>
+                                    </div>
+                            
+                                    <div class="boardrow ico1">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_1_ap.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta aperta
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            1st Call Expires in: 00:04:25
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        2m
+                                    </div>
+                            
+                                    <div class="board_line_viewpa">
+                                        Partecipa
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico4">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_4_ann.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta annullata
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                           
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        2m
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        Visualizza
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico3">
+                                
+                                        <div class="board_ico">
+                                            <img src="images/icoc_3_vin.png">
+                                        </div>
+                                        
+                                        <div class="boardwin">
+                                
+                                            <div class="board_descr">
+                                                Asta vinta 
+                                            </div>
+                                        
+                                            <div class="board_pricall">
+                                                2nd Call 
+                                            </div>
+                                
+                                            <div class="board_time">
+                                                1y
+                                            </div>
+                            
+                                            <div class="board_line_viewpay">
+                                                Pay
+                                            </div>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="boardrow ico2">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_2_ch.png">
+                                    </div>
+                                
+                                    <div class="boardchiu">
+                                
+                                    <div class="board_descr">
+                                        Asta Chiusa 
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            Price € 125.000,00 ($ 128,000,00)
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        1h
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        
+                                    </div>
+                                    
+                                    </div>
+                                    
+                                    </div>
+                            
+                                    <div class="boardrow ico3">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_3_vin.png">
+                                    </div>
+                                    
+                                    <div class="boardwin">
+                                    
+                                    <div class="board_descr">
+                                        Asta vinta
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            2nd Call 
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        1g
+                                    </div>
+                            
+                                    <div class="board_line_viewpay">
+                                        Pay
+                                    </div>
+                                    
+                                    </div>
+                                    
+                                    </div>
+                            
+                                    <div class="boardrow ico5">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_5_dec.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta decaduta
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                           
+                                        </div>
+                                        
+                                    <div class="board_time">
+                                        5g
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico4">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_4_ann.png">
+                                    </div>
+                                
+                                    <div class="board_descr">
+                                        Asta annullata
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                           
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        1m
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        Visualizza
+                                    </div>
+                                    </div>
+                            
+                                    <div class="boardrow ico2">
+                                
+                                    <div class="board_ico">
+                                        <img src="images/icoc_2_ch.png">
+                                    </div>
+                                
+                                    <div class="boardchiu">
+                                
+                                    <div class="board_descr">
+                                        Asta chiusa 
+                                    </div>
+                                    
+                                    <div class="board_pricall">
+                                            Price € 125.000,00 ($ 128,000,00)
+                                        </div>
+                                
+                                    <div class="board_time">
+                                        2m
+                                    </div>
+                            
+                                    <div class="board_line_view">
+                                        
+                                    </div></div>
+                                    </div>
+					      
+					            </div>
+					        
+					    </div>
+			</div>
+							
+		</div>
+		
+				
+				
+	</div>
+			
+			
+	</div>
+	
+	
+	<div class="row">
+		<div class="twelve columns" style="margin-top: 24px;">
+		</div>
+	</div>
+	
+	
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script type="text/javascript" src="js/custom-dash_home_cust.js"></script>
+    
+    
+</body>

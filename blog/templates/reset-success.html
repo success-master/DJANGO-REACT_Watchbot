@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="registration-page" style="padding-bottom: 30vh">
+        <div class="container">
+            <h1 class="title mb-2">Reset Password</h1>
+            <h4 class="text-success text-center mb-5">The password has been changed, you can log in to the platform!</h4>
+
+            <div class="text-center">
+                <a href="{% url "login" %}" class="btn btn-primary">Login</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

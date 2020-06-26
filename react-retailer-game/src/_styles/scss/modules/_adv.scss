@@ -1,0 +1,48 @@
+/* Advertising */
+.advDash {
+    margin: 0 auto;
+    text-align: center;
+
+    &.adv__primary-content-position{
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        height: $adv__primary-content__height;
+        margin: $adv__primary-content__margin-top auto $adv__primary-content__margin-bottom;
+        padding: 0 1rem;
+        text-align: left;
+
+        img{
+            display: inline-block;
+            vertical-align: top;
+            width: auto;
+            height: $adv__primary-content__height;
+        }
+    }
+
+    &.adv__sidebar-position{
+        display: block;
+        width: 100%;
+        max-width: $adv__sidebar__width;
+        height: $adv__sidebar__height;
+        margin: $adv__sidebar__margin-top auto $adv__sidebar__margin-bottom;
+
+        img{
+            display: inline-block;
+            vertical-align: top;
+            width: $adv__sidebar__width;
+            height: $adv__sidebar__height;
+        }
+    }
+}
+  
+.advDashImg {
+    height: auto;
+    width: 100%;
+}
+  
+.advRefImg {
+    height: 165px;
+    width: 332px;
+  
+}

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>WatchBot</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+  <![endif]-->
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+
+ <style>
+    .card {
+    width: 19.5%;
+
+}
+ </style>		
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+    <span class="close">&times;</span>
+    <h2>WatchBot - Login</h2>
+  </div>
+  <div class="modal-body">
+    <br />
+    <form class="loginbox" autocomplete="off">
+    <input placeholder="Username" type="text" id="username"></input>
+    <input placeholder="Password" type="password" id="password"></input>
+    <button id="submit">Login</button>
+    <p class="valid">Accesso effettuato.</p>
+    <p class="error">Errore. Per cortesia inserisci Username &amp; password corretti.</p>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <h3>Accesso Riservato</h3>
+  </div>
+        </div>
+    </div>
+    
+	<div class="row">
+		<div class="two columns">
+		    <a href="index.html">
+		        <img id="logo" src="images/logo_nero.png" align="left"/>
+		    </a>
+		</div>
+		<div class="ten columns">
+            <div class="row blueline">
+                <div class="one columns">
+                </div>
+                <div class="six columns">
+                    <ul class="nav-bar">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Reports</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>			
+                </div>
+                
+                <div class="five columns text-right">
+                    <div class="navlang">
+                        <img id="lang" src="images/lang.png" align="left"/>				
+                    </div>
+                    <div class="lefthead">
+                        <div class="socialh">
+                            <img src="images/social-h.png" align="right"/>	
+                        </div>
+                        <div class="logh">
+                            <div class="log-bar">
+                                <button id="myBtn">Sign In</button>
+                                <button class="newmember">Apply for<br/>membership</button>
+                            </div>		
+                        </div>	
+                    </div>
+		        </div>
+		    </div>
+		</div>    
+	</div>	
+	
+	<div class="row yellowline">
+		<div class="twelve columns indexcards">
+			<div class="card"><div class="hcard">
+			    <img src="images/home_indice1.jpg"/>	
+			</div></div>
+			<div class="card"><div class="hcard">
+			    <img src="images/home_indice1.jpg"/>	
+			</div></div>
+			<div class="card"><div class="hcard">
+			    <img src="images/home_indice1.jpg"/>	
+			</div></div>
+			<div class="card"><div class="hcard">
+			    <img src="images/home_indice1.jpg"/>	
+			</div></div>
+			<div class="card"><div class="h2card">
+			    <img src="images/home_indice1.jpg"/>	
+			</div></div>
+		</div>
+	</div>		
+	
+	<img src="images/header_striscia.jpg" width="100%"/>
+	
+	<div class="row">
+		<div class="twelve columns">
+		    <div class="section-header">	
+                <div class="hwrap">				        
+                    <h3>NEWS</h3>   
+                </div>
+			</div>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="twelve columns">
+			<div class="row">
+			    
+				<div class="eight columns">
+				    <div class="item">
+                            <img src="images/home_mainnews.jpg" width="100%" />
+                            <div class="item-overlay top"></div>
+                        </div>
+					
+					<div class="newsbox">
+					    <span class="catnews">
+					            News - 
+					    </span>
+                        <span class="htime">
+                        07 Luglio 2018
+                        </span>
+                        <div class="htitle">
+                        World Official Retailer
+                        </div>
+					
+                        <div class="hsubtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        </div>	
+					    
+					    <!--
+                        <div class="see-all">
+                            SEE ALL
+                        </div>	
+                        -->		
+                    </div>
+				</div>
+		        
+		        <div class="four columns">
+					
+					<div class="yellowlinenmg">
+					    <h3>Resta aggiornato, iscriviti alla newsletter Watchbot</h3>
+                        <form class="mailbox" autocomplete="off">
+                        <input placeholder="La Tua Mail" type="text" id="mailbut"></input>
+                        
+                        <button id="mailsignup">Submit</button>
+                        </form>
+                    </div>
+                    
+                    <div class="newscontainer">
+                        <div class="item">
+                            <img src="images/home_mainnews2.jpg" width="100%" />
+                            <div class="item-overlay top"></div>
+                        </div>
+					    <div class="newsbox">
+					        <span class="catmarket">
+					            Market - 
+					        </span>
+					        <span class="htime">
+					            07 Luglio 2018
+					        </span>
+					        <div class="hntitle">
+                        Retailer of the Month
+                        </div>
+					        <div class="ntitle">
+					            Loren Ipsum Loren Ipsum Loren Ipsum
+					        </div>
+					    </div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--
+	<div class="row">
+	    <div class="twelve columns">
+		    <div class="carousel-autoplay">
+                <div><img src="images/logo_1.png" /></div>
+                <div><img src="images/logo_2.png" /></div>
+                <div><img src="images/logo_3.png" /></div>
+                <div><img src="images/logo_4.png" /></div>
+                <div><img src="images/logo_5.png" /></div>
+            </div>
+		</div>
+	</div>
+	-->
+	
+	<div class="marginehome1"></div>
+	
+	
+	<div class="row">
+		<div class="twelve columns">
+			<div class="row">
+			    <div class="four columns side-posts">
+					<h4>Trending</h4>
+					<div class="side-post">
+					<a href="#">
+					    Fintech Startup TransferWise Cuts Fees as Competition
+					</a>
+					</div>
+					<div class="side-post">
+					    <a href="#">U.S. Stocks Mixed at Start of Big Earnings Week: Markets Wrap</a>
+					</div>
+					<div class="side-post">
+					    <a href="#">Russia Puts Browder on Interpol Wanted List, Blocking Travel</a>
+					</div>
+					<div class="side-post">
+					    <a href="#">NFL’s $205 Million Man Is Hated by Everyone</a>
+					</div>
+					<div class="side-post">
+					    <a href="#">Trump's Re-Election Edge Is Greatly Exaggerated</a>
+					</div>
+					<div class="side-post">
+					    <a href="#">Americans Are Retiring Later, Dying Sooner and Sicker In-Between</a><br />
+					</div>
+					<div class="side-post">
+					    <a href="#">Dramatic Sentencing Hearing Expected in Bergdahl Case</a>
+					</div>
+					
+					<img src="images/home_madv.jpg" width="100%" />
+					
+				</div>
+				
+				
+				<div class="eight columns">
+				<!--
+				    <div class="row">
+				        <div class="six columns">
+				            <div class="first-news">
+				                <div class="item">
+				                    <img src="images/news2.png" width="100%" height="100%" />
+				                    <div class="item-overlay top"></div>
+				                </div>
+				                <div class="fcaption">
+				                    The Rolex “John Player Special” Paul Newman Daytona Ref. 6241
+				                </div>
+				            </div>
+				        </div>
+				        
+				        <div class="six columns">
+				            <div class="first-news">
+				                <div class="item">
+				                    <img src="images/news3.png" width="100%" />
+				                </div>
+				                <div class="fcaption">
+				                    The Rolex “John Player Special” Paul Newman Daytona Ref. 6241
+				                </div>
+				            </div>
+				        </div>
+				        
+				    </div>
+				    
+				    
+				    <div class="margine"></div>
+				    -->
+				    
+				    <div class="row">
+				        <div class="four columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news4_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catmarket">
+                                        Market - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				        <div class="four columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news5_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catnews">
+                                        News - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				         <div class="four columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news6_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catnews">
+                                        News - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				    </div>
+				    
+				    <div class="margine"></div>
+				    
+					<div class="row techrow">
+				        <div class="eight columns techview"> 
+				            <h4>View</h4>
+				            <div class="techcontainer">
+				                <div class="item">
+				                    <img src="images/paul1.jpg" width="100%" />
+				                </div>    
+				                <div class="techbox">
+                                    <div class="ttitle">
+                                        Loren Ipsum Loren Paul Paul Loren
+                                    </div>
+                                    <div class="tauthor">
+                                        by Jon J. Doe
+                                    </div>
+					            </div>
+					            <div class="techaddon">
+                                    <div class="techla">
+                                        <div class="ttitle">
+                                            Loren Ipsum Loren Loren Ipsum Loren Ipsum Loren Loren Ipsum
+                                        </div>
+                                    </div>
+                                    <div class="techra">
+                                        <div class="ttitle">
+                                            Loren Ipsum Loren Loren Ipsum Loren Ipsum Loren Loren Ipsum
+                                        </div>
+                                    </div>
+                                </div>
+				            </div>
+				            
+				            
+				        </div>
+				        <div class="four columns techview">
+				            <h4>Technical</h4>
+				            <div class="twhitebox">
+                                <div class="ttitle">
+                                            Loren Ipsum Loren Paul Paul Loren
+                                        </div>
+                                <div class="tauthor">
+                                    by Jon J. Doe
+                                </div>
+                                <div class="t2title">
+                                    Loren Ipsum Loren Loren 
+                                </div>
+                                <div class="t2title">
+                                    Loren Ipsum Loren Loren Ipsum Loren Ipsum Loren Loren Ipsum
+                                </div>
+                                <div class="t2title">
+                                    Loren Ipsum Loren Loren Loren Ipsum Loren Loren 
+                                </div>
+                            </div>
+				        </div>
+				    </div>
+					
+					 <div class="margine"></div>
+					
+					<div class="row techrow">
+				        
+				        <div class="four columns techview">
+				            <h4>Technical</h4>
+				            <div class="twhitebox">
+                                <div class="ttitle">
+                                            Loren Ipsum Loren Paul Paul Loren
+                                        </div>
+                                <div class="tauthor">
+                                    by Jon J. Doe
+                                </div>
+                                <div class="t2title">
+                                    Loren Ipsum Loren Loren 
+                                </div>
+                                <div class="t2title">
+                                    Loren Ipsum Loren Loren Ipsum Loren Ipsum Loren Loren Ipsum
+                                </div>
+                                <div class="t2title">
+                                    Loren Ipsum Loren Loren Loren Ipsum Loren Loren 
+                                </div>
+                            </div>
+				        </div>
+				        <div class="eight columns techview"> 
+				            <h4>View</h4>
+				            <div class="techcontainer">
+				                <div class="item">
+				                    <img src="images/paul2.jpg" width="100%" />
+				                </div>    
+				                <div class="techbox">
+                                    <div class="ttitle">
+                                        Loren Ipsum Loren Paul Paul Loren
+                                    </div>
+                                    <div class="tauthor">
+                                        by Jon J. Doe
+                                    </div>
+					            </div>
+					            <div class="techaddon">
+                                    <div class="techla">
+                                        <div class="ttitle">
+                                            Loren Ipsum Loren Loren Ipsum Loren Ipsum Loren Loren Ipsum
+                                        </div>
+                                    </div>
+                                    <div class="techra">
+                                        <div class="ttitle">
+                                            Loren Ipsum Loren Loren Ipsum Loren Ipsum Loren Loren Ipsum
+                                        </div>
+                                    </div>
+                                </div>
+				            </div>
+				            
+				            
+				        </div>
+				    </div>	
+				</div>
+		
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="marginehome1"></div>
+	<div class="row">
+	    <div class="twelve columns">
+		    <img src="images/home_mbanner.jpg" width="100%" />
+		</div>
+	</div>
+	<div class="marginehome1"></div>
+	
+	<div class="row">
+				        <div class="three columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news4_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catmarket">
+                                        Market - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				        <div class="three columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news5_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catnews">
+                                        News - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				         <div class="three columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news6_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catnews">
+                                        News - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				        <div class="three columns">
+				            <div class="second-news newscontainer">
+				                <div class="item">
+				                    <img src="images/news6_2.png" width="100%" />
+				                </div>    
+				                <div class="newsbox">
+                                    <span class="catnews">
+                                        News - 
+                                    </span>
+                                    <span class="htime">
+                                        07 Luglio 2018
+                                    </span>
+                                    <div class="ntitle">
+                                        Loren Ipsum Loren
+                                    </div>
+					            </div>
+				            </div>
+				        </div>
+				        
+				    </div>
+				    
+	<div class="marginehome1"></div>
+	
+	<div class="footer">
+	
+	    <div class="row">
+		    <div class="twelve columns">
+		    <p align="center" class="plfooter">
+		        <img id="logo_footer" src="images/logo_bianco.png" align="center"/>
+		    </p>
+		    <div class="row">
+		        <div class="two columns"></div>
+		        <div class="eight columns">
+		            <hr class="hwhite"/>
+		        </div>
+		        <div class="two columns"></div>
+		    </div>
+		    <p align="center">
+		    <a href="#">Newsletter</a>      
+		    <a href="#">Terms & Conditions</a>      
+		    <a href="#">Privacy Policy</a>      
+		    <a href="#">Register</a>    
+		    <a href="#">Contact Us</a>      
+		    <a href="#">Cookie & Privacy</a> 
+		    </p>
+		    <p align="center">©2018 WatchBot - All Rights Reserved.</p>
+		    <!--
+		    <img src="images/footer-social.png" align="center"/>
+		    -->
+		    </div>
+		    
+	    </div>
+	
+	</div>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.carousel-autoplay').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+            });
+        });
+    </script>
+</body>

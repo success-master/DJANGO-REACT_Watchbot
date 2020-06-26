@@ -1,0 +1,342 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>WatchBOT</title>
+        <link href="{% static "blog/bootstrap410/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/style_old.css" %}" rel="stylesheet">
+        <link href="{% static "blog/fontawesome/css/font-awesome.min.css" %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|PT+Serif|Source+Code+Pro:400,700,900" rel="stylesheet">
+        <link rel="manifest" href="{% static "manifest.json" %}">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_dark" aria-controls="navbar_dark" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_dark">
+          <ul class="navbar-nav mr-auto left">
+            <li class="nav-item d-block d-sm-none">
+                <a class="nav-link" href="#">{% trans "About us" %}</a>
+              </li>
+              <li class="nav-item d-block d-sm-none">
+                <a class="nav-link" href="#">{% trans "News Releases" %}</a>
+              </li>
+              <li class="nav-item d-block d-sm-none">
+                <a class="nav-link" href="#">{% trans "Retailer" %}</a>
+              </li>
+              <li class="nav-item d-block d-sm-none">
+                <a class="nav-link" href="#">{% trans "Brands" %}</a>
+              </li>
+              <li class="nav-item d-block d-sm-none">
+                <a class="nav-link" href="#">{% trans "Reports" %}</a>
+              </li>
+              <li class="nav-item d-block d-sm-none">
+                <a class="nav-link" href="#">{% trans "Contacts" %}</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Terms and Conditions <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Buyer Protection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Authenticity Guarantee</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Support</a>
+            </li>
+          </ul>
+        </div>
+      <ul class="form-inline navbar-nav my-2 my-md-0 menu_lang">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">eng</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown07">
+            <a class="dropdown-item" href="#">eng</a>
+            <a class="dropdown-item" href="#">ita</a>
+          </div>
+        </li>
+      </ul>
+        <a href="{% url "login" %}" class="login_button">
+            <button type="button" class="btn btn-primary"><img src="{% static "blog/images/login.png" %}">Login</button>
+        </a>
+      </div>
+    </nav>
+    <div class="container">
+        <nav class="navbar bg-white navbar-expand-lg text-center text-sm-left">
+          <a class="navbar-brand" href="{% url "home" %}">
+            <img src="{% static "blog/images/logo.png" %}" class="d-inline-block align-top" alt="">
+          </a>
+            <div class="justify-content-md-center collapse navbar-collapse">
+
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans "About us" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans "News Releases" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans "Retailer" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans "Brands" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans "Reports" %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans "Contacts" %}</a>
+                  </li>
+              </ul>
+            </div>
+            <div class="form-inline d-none d-sm-block">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="container">
+    <div class="row yellowline">
+			<div class="card">
+                <div class="hcard">
+                    <div class="reference">
+                        Ref. 730.032<br />
+                        A. Lange & Söhne
+                    </div>
+                    <div class="price">
+                        44.300€ <span class="kpi">+ 3,5%</span>
+                    </div>
+
+			        <img src="{% static "blog/images/indice_ref.jpg" %}"/>
+			    </div>
+            </div>
+			<div class="card d-none d-sm-block"><div class="hcard">
+                <div class="reference">
+                    Ref. 730.032<br />
+                    A. Lange & Söhne
+                </div>
+                <div class="price">
+                    44.300€ <span class="kpi">+ 3,5%</span>
+                </div>
+			    <img src="{% static "blog/images/indice_ref.jpg" %}"/>
+			</div></div>
+			<div class="card d-none d-sm-block"><div class="hcard">
+                <div class="reference">
+                    Ref. 730.032<br />
+                    A. Lange & Söhne
+                </div>
+                <div class="price">
+                    44.300€ <span class="kpi">+ 3,5%</span>
+                </div>
+			    <img src="{% static "blog/images/indice_ref.jpg" %}"/>
+			</div></div>
+			<div class="card d-none d-sm-block"><div class="hcard">
+                <div class="reference">
+                    Ref. 730.032<br />
+                    A. Lange & Söhne
+                </div>
+                <div class="price">
+                    44.300€ <span class="kpi">+ 3,5%</span>
+                </div>
+			    <img src="{% static "blog/images/indice_ref.jpg" %}"/>
+			</div></div>
+			<div class="card d-none d-sm-block"><div class="hcard">
+                <div class="reference">
+                    Ref. 730.032<br />
+                    A. Lange & Söhne
+                </div>
+                <div class="price">
+                    44.300€ <span class="kpi">+ 3,5%</span>
+                </div>
+			    <img src="{% static "blog/images/indice_ref.jpg" %}"/>
+			</div></div>
+	</div>
+</section>
+<div class="container">
+    <div class="separator_bar"></div>
+</div>
+<section class="container main_container">
+{% block content %}
+{% endblock content %}
+</section>
+<footer class="content">
+    <div class="container">
+        <div class="footer_logo_row">
+            <img src="{% static 'blog/images/log_white.png' %}">
+        </div>
+        <div class="row footer_menu">
+            <div class="col-sm-3 col-12">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">What is Watchbot</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">How Watchbot works</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Advertising</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sitemap</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-12">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Trusted retailers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Auction trend</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Partners</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-12">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Trems & Conditions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Privacy Policy</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Cookie & Policy</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 social col-12">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <form method="post">
+        <div class="row keep_in_touch d-none d-sm-flex">
+            <div class="col-sm-2">
+                <span class="keep_in_touch_span">Subscribe</span>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group with-btn">
+                  <input type="email" class="form-control" name="email" placeholder="Your e-mail">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary footer" type="submit">
+                        Sign Up
+                    </button>
+                  </span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group newsletter_agreement_footer">
+                    <label for="newsletter_agreement_footer">
+                        <input type="checkbox" id="newsletter_agreement_footer">
+                        I have read and accept the <a href="#"><strong>Privacy Policy</strong></a>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <a href="{% url "login" %}" class="login_button">
+                    <button type="button" class="float-right btn btn-primary"><img src="{% static "blog/images/login.png" %}">Login</button>
+                </a>
+                <ul class="float-right navbar-nav my-2 my-md-0 menu_lang">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">eng</a>
+                      <div class="dropdown-menu" aria-labelledby="dropdown07">
+                        <a class="dropdown-item" href="#">eng</a>
+                        <a class="dropdown-item" href="#">ita</a>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+
+</footer>
+<script src="{% static "blog/js/jquery.min.js" %}"></script>
+<!--
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+-->
+<script src="{% static "blog/bootstrap410/js/bootstrap.bundle.min.js" %}"></script>
+{% block extra_body_script %}
+{% endblock extra_body_script %}
+
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-messaging.js"></script>
+<script>
+  function messageReceived(message){
+      console.log(message);
+  }
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD_LuTv-rh6GlQ-sjraC9paG4QkacaaB0I",
+    authDomain: "watchbot-afbb0.firebaseapp.com",
+    databaseURL: "https://watchbot-afbb0.firebaseio.com",
+    projectId: "watchbot-afbb0",
+    storageBucket: "watchbot-afbb0.appspot.com",
+    messagingSenderId: "108225665252"
+  };
+  firebase.initializeApp(config);
+
+  const messaging = firebase.messaging();
+  messaging.usePublicVapidKey("BPXfMrKqkQyz5s8cxmMsklUPxzF9oDcWqD1DKJRbKdgef3WFd5aSiOG84HxefCNu6V6RFRUQSd4wWwHxpZE_VD4");
+
+
+  function getToken(messaging) {
+      messaging.getToken().then(function(currentToken) {
+          console.log(currentToken);
+      if (currentToken) {
+        //sendTokenToServer(currentToken);
+        //updateUIForPushEnabled(currentToken);
+      } else {
+        // Show permission request.
+        console.log('No Instance ID token available. Request permission to generate one.');
+        // Show permission UI.
+        //updateUIForPushPermissionRequired();
+        //setTokenSentToServer(false);
+      }
+    }).catch(function(err) {
+      console.log('An error occurred while retrieving token. ', err);
+      //showToken('Error retrieving Instance ID token. ', err);
+      //setTokenSentToServer(false);
+    });
+  }
+
+  messaging.requestPermission().then(function() {
+      console.log('Notification permission granted.');
+      // TODO(developer): Retrieve an Instance ID token for use with FCM.
+      // ...
+      getToken(messaging);
+  }).catch(function(err) {
+      console.log('Unable to get permission to notify.', err);
+  });
+
+  messaging.onMessage(function(payload) {
+      messageReceived(payload);
+      // ...
+    });
+
+</script>
+</body>
+</html>

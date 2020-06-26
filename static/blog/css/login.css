@@ -1,0 +1,91 @@
+.login-page {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.login-page .fake-icon {
+    width: 124px;
+    height: 124px;
+    background-color: #f68b1f;
+}
+
+.login-page .first-row {
+    padding: 0;
+    height: 320px;
+    background-image: url("../images/about_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-page .login {
+    background-color: #2d505f;
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+.login-page .login .title {
+    color: #fff;
+    font-weight: normal;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.login-page .login .forgot {
+    font-size: 14px;
+    text-align: right;
+    color: #fff;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+}
+
+@media screen and (max-width: 992px) {
+    .login-page .login .forgot {
+        position: absolute;
+        right: 15px;
+        bottom: 20px;
+    }
+}
+
+.login-page .third-row {
+    background-color: #85a5b0;
+    padding-top: 45px;
+    padding-bottom: 10px;
+}
+
+.login-page .third-row img {
+    width: auto;
+    height: 120px;
+}
+
+.login-page .third-row .container > .title {
+    margin-bottom: 70px;
+}
+
+.login-page .third-row .long-arrow-down {
+   line-height: 1;
+    margin-bottom: 10px;
+}
+
+.login-page .third-row .title {
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.login-page .third-row .description {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #2d505f;
+}
+
+.login-page .third-row .full-access {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.login-page .third-row .more {
+    margin-top: 10px;
+}

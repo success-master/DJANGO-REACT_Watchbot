@@ -1,0 +1,9 @@
+wb000 IMPORT REFERENZE
+
+Convertire xls in csv con separatore colonne ; e con codifica caratteri utf-8
+Caricare sul server il file ad esempio nella cartella /home/watchbot
+attivare il virtual env
+lasciare il comando: python ./manage.py import_reference /path/file/server
+Caricare nella cartella media/uploads le immagini
+riavviare server
+

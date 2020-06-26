@@ -1,0 +1,35 @@
+
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+{% load static %}
+
+
+
+
+
+<div class="container">
+  <form id="contact" action="" method="post">
+     {% csrf_token %}
+    <h1 class="title"> Contact Form</h1>
+    <fieldset>
+      <input name="first_name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input name="email" placeholder="Your email address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input name="phone_number" placeholder="Your phone number (optional)" type="tel" tabindex="3">
+    </fieldset>
+    <fieldset>
+      <textarea name="message" placeholder="Type your message here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button class='btn btn-primary' name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
+
+
+{% endblock content %}
